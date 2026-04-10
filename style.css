@@ -178,3 +178,42 @@ body
     font-size: 0.8rem;
     top: 4px;
 }
+
+/* Specs Table Styling */
+.specs-table 
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.specs-table th 
+{
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.specs-table td 
+{
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #bdc3c7;
+    font-size: 0.95rem;
+}
+
+.specs-table tr:hover 
+{
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.specs-table strong 
+{
+    color: #ecf0f1;
+}
