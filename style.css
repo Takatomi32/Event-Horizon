@@ -430,7 +430,7 @@ html, body {
 /* --- HUGE DESCRIPTION TEXT --- */
 .ship-description-box {
     position: absolute;
-    bottom: 120px;
+    bottom: 240px;
     right: 60px;
     text-align: right;
     pointer-events: none;
@@ -448,7 +448,7 @@ html, body {
 
 .ship-description-box p {
     font-family: 'Rajdhani', sans-serif;
-    font-size: .5rem; /* Bigger description */
+    font-size: 1rem; /* Bigger description */
     color: var(--accent);
     max-width: 500px;
     margin-top: 10px;
