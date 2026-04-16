@@ -438,7 +438,7 @@ html, body {
 
 .ship-description-box h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: -5rem; /* HUGE SHIP NAME */
+    font-size: 0.5rem; /* HUGE SHIP NAME */
     margin: 0;
     color: #fff;
     text-transform: uppercase;
