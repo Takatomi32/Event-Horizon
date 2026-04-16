@@ -338,7 +338,7 @@ html, body {
     margin: 0 auto;           /* Extra insurance for centering */
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 12px;
 }
 
 /* 4. Fix for the Header Wings */
