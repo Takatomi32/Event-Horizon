@@ -430,7 +430,7 @@ html, body {
 /* --- HUGE DESCRIPTION TEXT --- */
 .ship-description-box {
     position: absolute;
-    bottom: 0px;
+    bottom: 60px;
     right: 60px;
     text-align: right;
     pointer-events: none;
@@ -438,7 +438,7 @@ html, body {
 
 .ship-description-box h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1rem; /* HUGE SHIP NAME */
+    font-size: 5rem; /* HUGE SHIP NAME */
     margin: 0;
     color: #fff;
     text-transform: uppercase;
@@ -448,7 +448,7 @@ html, body {
 
 .ship-description-box p {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1rem; /* Bigger description */
+    font-size: 5rem; /* Bigger description */
     color: var(--accent);
     max-width: 500px;
     margin-top: 10px;
@@ -459,7 +459,7 @@ html, body {
     margin-top: auto;
     color: #555;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 5rem;
     text-align: center;
     padding-top: 20px;
 }
