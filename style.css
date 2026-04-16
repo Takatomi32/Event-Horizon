@@ -596,3 +596,49 @@ html, body {
 }
 
 .back-btn:hover { color: white; }
+
+/* Container for the whole fleet page */
+.fleet-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 60px; /* Space for your top navbar */
+    background: #000;
+}
+
+/* Sidebar Styling (Left) */
+.ship-menu {
+    width: 350px; /* Adjust to match your image */
+    background: #000;
+    border-right: 2px solid #3498db; /* The blue line from your screenshot */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 10;
+}
+
+/* Viewport Styling (Right) */
+.viewer-container {
+    flex: 1; /* This pushes it to the right and fills the screen */
+    position: relative;
+    background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The actual 3D element */
+#main-display {
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+/* Text overlay on the right */
+.ship-data-overlay {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    text-align: right;
+    pointer-events: none;
+}
