@@ -27,15 +27,27 @@
             </div>
 
           <div class="ship-list">
-                <button class="ship-btn active" onclick="updateModel('arwing_mk1.glb', 'Arwing MK I', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
-                    <img src="starfox_thumb/arwing_mk1_thumb.png" class="btn-logo">
-                    <span class="btn-text">ARWING MK I</span>
-                </button>
-              <model-viewer id="main-display" 
+            <button class="ship-btn active" onclick="updateModel('arwing_mk1.glb', 'ARWING MK I', 'The classic Lylat interceptor.')">
+                <img src="starfox_thumb/arwing_mk1_thumb.png" class="btn-img-thumb">
+                <span class="btn-text">ARWING MK I</span>
+            </button>
+            </div>
+    </aside>
+      
+      <main class="viewer-container">
+        <model-viewer id="main-display" 
             src="sf_models/arwing_mk1.glb" 
             auto-rotate camera-controls 
+            exposure="1.2"
             shadow-intensity="1">
-            </model-viewer>
+        </model-viewer>
+        
+        <div class="ship-data-overlay">
+            <h1 id="ship-name">ARWING MK I</h1>
+            <p id="ship-desc">The classic Lylat interceptor.</p>
+        </div>
+    </main>
+</div>
 
             <div class="ship-list">
                 <button class="ship-btn active" onclick="updateModel('sf_models/arwing_mk2.glb', 'arwing_mk2', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
