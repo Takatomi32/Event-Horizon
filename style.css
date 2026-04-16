@@ -483,3 +483,116 @@ html, body {
 .krazoa .f-name   { color: #85c1e9; }
 .aquans .f-name   { color: #27ae60; }
 .sharpclaw .f-name { color: #f1c40f; }
+
+/* Fleet Page Layout */
+.fleet-page {
+    margin: 0;
+    height: 100vh;
+    background: #05070a;
+    overflow: hidden;
+}
+
+.fleet-layout {
+    display: flex;
+    height: 100vh;
+    padding-top: 70px;
+}
+
+/* Sidebar Styling */
+.ship-menu {
+    width: 320px;
+    background: rgba(0, 0, 0, 0.85);
+    border-right: 2px solid var(--accent);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faction-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
+
+.menu-faction-logo { height: 40px; }
+
+.ship-list {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Sidebar Buttons */
+.ship-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #888;
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.ship-btn .btn-logo {
+    height: 25px;
+    filter: grayscale(100%) opacity(0.5);
+}
+
+.ship-btn.active, .ship-btn:hover {
+    background: rgba(52, 152, 219, 0.15);
+    border-color: var(--accent);
+    color: white;
+}
+
+.ship-btn.active .btn-logo {
+    filter: grayscale(0%) drop-shadow(0 0 5px var(--accent));
+    opacity: 1;
+}
+
+/* HUD Text Overlay */
+.hud-overlay {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hud-line {
+    width: 50px;
+    height: 4px;
+    background: var(--accent);
+    margin-bottom: 10px;
+}
+
+.hud-overlay h1 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.stats-box {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    color: var(--accent);
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.back-btn {
+    margin-top: 20px;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.back-btn:hover { color: white; }
