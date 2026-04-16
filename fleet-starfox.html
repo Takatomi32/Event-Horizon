@@ -5,7 +5,7 @@
     <title>StarFox Fleet | Event Horizon</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body class="fleet-page starfox-theme">
 
@@ -27,10 +27,15 @@
             </div>
 
           <div class="ship-list">
-                <button class="ship-btn active" onclick="updateModel('sf_models/arwing_mk1.glb', 'arwing_mk1', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
+                <button class="ship-btn active" onclick="updateModel('arwing_mk1.glb', 'Arwing MK I', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
                     <img src="starfox_thumb/arwing_mk1_thumb.png" class="btn-logo">
                     <span class="btn-text">ARWING MK I</span>
                 </button>
+              <model-viewer id="main-display" 
+            src="sf_models/arwing_mk1.glb" 
+            auto-rotate camera-controls 
+            shadow-intensity="1">
+            </model-viewer>
 
             <div class="ship-list">
                 <button class="ship-btn active" onclick="updateModel('sf_models/arwing_mk2.glb', 'arwing_mk2', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
