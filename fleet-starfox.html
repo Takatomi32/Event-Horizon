@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StarFox Fleet | Event Horizon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body class="fleet-page starfox-theme">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Hangar</a></li>
+                <li class="active-fleet">STAR FOX COMMAND</li>
+            </ul>
+        </div>
+    </nav>
+
+  <div class="fleet-layout">
+        <aside class="ship-menu">
+            <div class="faction-header">
+                <img src="sf_logo.png" class="menu-faction-logo">
+                <h2>STARFOX FLEET</h2>
+            </div>
+
+          <div class="ship-list">
+                <button class="ship-btn active" onclick="updateModel('models/arwing_mk1.glb', 'ARWING MK I', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
+                    <img src="images/logos/starfox_logo.png" class="btn-logo">
+                    <span class="btn-text">ARWING MK I</span>
+                </button>
+
+            <div class="ship-list">
+                <button class="ship-btn active" onclick="updateModel('models/arwing_mk2.glb', 'ARWING MK II', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
+                    <img src="images/logos/starfox_logo.png" class="btn-logo">
+                    <span class="btn-text">ARWING MK II</span>
+                </button>
+
+              <div class="ship-list">
+                <button class="ship-btn active" onclick="updateModel('models/arwing_mk2_b.glb', 'ARWING MK II Retrofit', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
+                    <img src="images/logos/starfox_logo.png" class="btn-logo">
+                    <span class="btn-text">ARWING MK II Retrofit</span>
+                </button>
+
+                <div class="ship-list">
+                <button class="ship-btn active" onclick="updateModel('models/arwing_mk3.glb', 'ARWING MK III', 'The standard-setting interceptor for Team Star Fox. Features integrated G-Diffuser technology.')">
+                    <img src="images/logos/starfox_logo.png" class="btn-logo">
+                    <span class="btn-text">ARWING MK III</span>
+                </button>
