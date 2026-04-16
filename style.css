@@ -430,7 +430,7 @@ html, body {
 /* --- HUGE DESCRIPTION TEXT --- */
 .ship-description-box {
     position: absolute;
-    bottom: 60px;
+    bottom: 20px;
     right: 60px;
     text-align: right;
     pointer-events: none;
