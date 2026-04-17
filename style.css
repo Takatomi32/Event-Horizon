@@ -463,3 +463,27 @@ html, body {
     text-align: center;
     padding-top: 20px;
 }
+
+
+/*Starwolf Fleet*/
+
+starwolf-border {
+    border-right: 3px solid #e74c3c !important;
+}
+
+/* Change the button hover color to Red */
+.wolf-btn:hover, .wolf-btn.active {
+    background: rgba(231, 76, 60, 0.2) !important;
+    border-color: #e74c3c !important;
+    color: #fff !important;
+}
+
+/* Background glow for the viewer */
+.starwolf-theme .viewer-section {
+    background: radial-gradient(circle, #1a0a0a 0%, #000 100%) !important;
+}
+
+/* Custom Red HUD Line for the info box */
+.starwolf-theme .ship-description-box p {
+    color: #e74c3c !important;
+}
