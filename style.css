@@ -399,7 +399,7 @@ html, body {
 }
 
 .ship-btn .btn-text {
-    font-size: 1.3rem; /* Bigger button text */
+    font-size: 1rem; /* Bigger button text */
     font-family: 'Rajdhani', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
@@ -459,7 +459,7 @@ html, body {
     margin-top: auto;
     color: #555;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     padding-top: 20px;
 }
