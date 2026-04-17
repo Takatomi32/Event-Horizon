@@ -6,11 +6,17 @@
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
-        /* Emergency CSS in case style.css is missing */
+        /* Emergency CSS for Star Wolf Theme */
         :root { --wolf-red: #e74c3c; }
         .starwolf-theme { background: #000; color: white; margin: 0; }
         .wolf-border { border-right: 3px solid var(--wolf-red) !important; }
         .wolf-text { color: var(--wolf-red) !important; }
+        /* Fix for buttons to match Star Wolf theme */
+        .wolf-btn.active, .wolf-btn:hover {
+            border-color: var(--wolf-red) !important;
+            background: rgba(231, 76, 60, 0.2) !important;
+            color: #fff !important;
+        }
     </style>
 </head>
 <body class="fleet-page starwolf-theme">
@@ -25,41 +31,38 @@
         </div>
     </nav>
 
- <div class="fleet-layout">
+    <div class="fleet-layout">
         <aside class="ship-sidebar wolf-border">
             <div class="sidebar-header">
                 <h2 class="wolf-text">STAR WOLF FLEET</h2>
             </div>
 
-        <div class="ship-list">
+            <div class="ship-list">
                 <button class="ship-btn active wolf-btn" onclick="updateModel('wolfen.glb', 'WOLFEN', 'A heavy-hitting interceptor designed by Ruffian Corp. The signature craft of Star Wolf.')">
                     <span class="btn-text">WOLFEN</span>
                 </button>
 
-                <div class="ship-list">
-                <button class="ship-btn active wolf-btn" onclick="updateModel('redfang.glb', 'REDFANG', 'A rare Gen-III prototype built by Ruffian Corp. Represents the peak of Venomian technology.')">
+                <button class="ship-btn wolf-btn" onclick="updateModel('redfang.glb', 'REDFANG', 'A rare Gen-III prototype built by Ruffian Corp. Represents the peak of Venomian technology.')">
                     <span class="btn-text">REDFANG</span>
                 </button>
 
-              <div class="ship-list">
-                <button class="ship-btn active wolf-btn" onclick="updateModel('rainbow.glb', 'RAINBOW DELTA', 'Leon Powalskis custom-tuned Wolfen. Focuses entirely on maximizing thrust.')">
+                <button class="ship-btn wolf-btn" onclick="updateModel('rainbow.glb', 'RAINBOW DELTA', 'Leon Powalskis custom-tuned Wolfen. Focuses entirely on maximizing thrust.')">
                     <span class="btn-text">RAINBOW DELTA</span>
                 </button>
 
-                 <div class="ship-list">
-                <button class="ship-btn active wolf-btn" onclick="updateModel('blackrose.glb', 'BLACKROSE', 'Panther Carusos signature heavy interceptor. Trades agility for maximum armor.')">
+                <button class="ship-btn wolf-btn" onclick="updateModel('blackrose.glb', 'BLACKROSE', 'Panther Carusos signature heavy interceptor. Trades agility for maximum armor.')">
                     <span class="btn-text">BLACKROSE</span>
                 </button>
 
-                <div class="ship-list">
-                <button class="ship-btn active wolf-btn" onclick="updateModel('stalker.glb', 'STALKER', 'An experimental stealth interceptor. Designed to deliver overwhelming firepower from a concealed position.')">
+                <button class="ship-btn wolf-btn" onclick="updateModel('stalker.glb', 'STALKER', 'An experimental stealth interceptor. Designed to deliver overwhelming firepower from a concealed position.')">
                     <span class="btn-text">STALKER</span>
                 </button>
+            </div>
 
-          <a href="models.html" class="back-btn">« RETURN TO HANGAR</a>
+            <a href="models.html" class="back-btn">« RETURN TO HANGAR</a>
         </aside>
 
-          <main class="viewer-section">
+        <main class="viewer-section">
             <model-viewer id="main-display" 
                 src="sw_models/wolfen.glb" 
                 auto-rotate camera-controls 
@@ -73,10 +76,12 @@
         </main>
     </div>
 
-<script>
+    <script>
         function updateModel(fileName, name, desc) {
             const viewer = document.getElementById('main-display');
-            viewer.src = `sf_models/${fileName}`;
+            // Change 'sw_models' to 'sf_models' if you put all models in one folder
+            viewer.src = `sw_models/${fileName}`; 
+            
             document.getElementById('ship-name').innerText = name;
             document.getElementById('ship-desc').innerText = desc;
             
