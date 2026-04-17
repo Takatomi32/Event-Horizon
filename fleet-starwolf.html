@@ -1,1 +1,60 @@
+<body class="fleet-page starwolf-theme"> <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Hangar</a></li>
+                <li class="active-fleet" style="color: #e74c3c;">STAR WOLF MERCENARIES</li>
+            </ul>
+        </div>
+    </nav>
 
+  <div class="fleet-layout">
+        <aside class="ship-sidebar starwolf-border">
+            <div class="sidebar-header">
+                <h2 style="color: #e74c3c;">STAR WOLF FLEET</h2>
+            </div>
+
+        <div class="ship-list">
+                <button class="ship-btn active wolf-btn" onclick="updateModel('wolfen.glb', 'WOLFEN', 'A heavy-hitting interceptor designed by Ruffian Corp. The signature craft of Star Wolf.')">
+                    <span class="btn-text">WOLFEN</span>
+                </button>
+
+                <div class="ship-list">
+                <button class="ship-btn active wolf-btn" onclick="updateModel('redfang.glb', 'REDFANG', 'A rare Gen-III prototype built by Ruffian Corp. Represents the peak of Venomian technology.')">
+                    <span class="btn-text">REDFANG</span>
+                </button>
+
+              <div class="ship-list">
+                <button class="ship-btn active wolf-btn" onclick="updateModel('rainbow.glb', 'RAINBOW DELTA', 'Leon Powalskis custom-tuned Wolfen. Focuses entirely on maximizing thrust.')">
+                    <span class="btn-text">RAINBOW DELTA</span>
+                </button>
+
+                 <div class="ship-list">
+                <button class="ship-btn active wolf-btn" onclick="updateModel('blackrose.glb', 'BLACKROSE', 'Panther Carusos signature heavy interceptor. Trades agility for maximum armor.')">
+                    <span class="btn-text">BLACKROSE</span>
+                </button>
+
+                <div class="ship-list">
+                <button class="ship-btn active wolf-btn" onclick="updateModel('stalker.glb', 'STALKER', 'An experimental stealth interceptor. Designed to deliver overwhelming firepower from a concealed position.')">
+                    <span class="btn-text">STALKER</span>
+                </button>
+
+          <a href="vehicles.html" class="back-btn">« RETURN TO HANGAR</a>
+                </aside>
+
+          <main class="viewer-section">
+            <model-viewer id="main-display" 
+                src="sf_models/wolfen_mk1.glb" 
+                auto-rotate camera-controls 
+                shadow-intensity="1" 
+                exposure="1.2">
+            </model-viewer>
+
+            <div class="ship-description-box">
+                <h1 id="ship-name" style="text-shadow: 0 0 20px #e74c3c;">WOLFEN MK I</h1>
+                <p id="ship-desc" style="color: #e74c3c;">The primary heavy fighter of the Star Wolf team. Built for raw speed and power.</p>
+            </div>
+        </main>
+    </div>
+    
+</body>
