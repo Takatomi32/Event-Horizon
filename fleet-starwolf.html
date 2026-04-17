@@ -1,18 +1,34 @@
-<body class="fleet-page starwolf-theme"> <nav class="navbar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wolf Fleet | Event Horizon</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        /* Emergency CSS in case style.css is missing */
+        :root { --wolf-red: #e74c3c; }
+        .starwolf-theme { background: #000; color: white; margin: 0; }
+        .wolf-border { border-right: 3px solid var(--wolf-red) !important; }
+        .wolf-text { color: var(--wolf-red) !important; }
+    </style>
+</head>
+<body class="fleet-page starwolf-theme">
+
+    <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="models.html">Hangar</a></li>
-                <link rel="stylesheet" href="style.css">
-                <li class="active-fleet" style="color: #e74c3c;">STAR WOLF MERCENARIES</li>
+                <li class="active-fleet wolf-text">STAR WOLF MERCENARIES</li>
             </ul>
         </div>
     </nav>
 
-  <div class="fleet-layout">
-        <aside class="ship-sidebar starwolf-border">
+ <div class="fleet-layout">
+        <aside class="ship-sidebar wolf-border">
             <div class="sidebar-header">
-                <h2 style="color: #e74c3c;">STAR WOLF FLEET</h2>
+                <h2 class="wolf-text">STAR WOLF FLEET</h2>
             </div>
 
         <div class="ship-list">
@@ -47,15 +63,27 @@
             <model-viewer id="main-display" 
                 src="sw_models/wolfen.glb" 
                 auto-rotate camera-controls 
-                shadow-intensity="1" 
-                exposure="1.2">
+                shadow-intensity="1">
             </model-viewer>
 
             <div class="ship-description-box">
-                <h1 id="ship-name" style="text-shadow: 0 0 20px #e74c3c;">WOLFEN</h1>
-                <p id="ship-desc" style="color: #e74c3c;">A heavy-hitting interceptor designed by Ruffian Corp. The signature craft of Star Wolf.</p>
+                <h1 id="ship-name" class="wolf-text">WOLFEN</h1>
+                <p id="ship-desc">A heavy-hitting interceptor designed by Ruffian Corp. The signature craft of Star Wolf.</p>
             </div>
         </main>
     </div>
-    
+
+<script>
+        function updateModel(fileName, name, desc) {
+            const viewer = document.getElementById('main-display');
+            viewer.src = `sf_models/${fileName}`;
+            document.getElementById('ship-name').innerText = name;
+            document.getElementById('ship-desc').innerText = desc;
+            
+            document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
 </body>
+</html>
