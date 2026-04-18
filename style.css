@@ -487,3 +487,38 @@ starwolf-border {
 .starwolf-theme .ship-description-box p {
     color: #e74c3c !important;
 }
+
+
+/*Second Lylat War Bosses*/
+.boss-campaign-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #f1c40f; /* Gold/Amber */
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+}
+
+/* Sidebar for Boss Pages */
+.boss-sidebar {
+    border-right: 3px solid #f1c40f !important;
+}
+
+/* Boss Buttons */
+.boss-sidebar .ship-btn.active {
+    background: rgba(241, 196, 15, 0.15) !important;
+    border-color: #f1c40f !important;
+    color: #fff !important;
+}
+
+/* HUD Title on the Viewer */
+.ship-description-box h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 10px #f1c40f;
+}
+
+.ship-description-box p {
+    font-size: 1.2rem;
+    color: #f1c40f; /* Amber description text */
+    max-width: 450px;
+}
