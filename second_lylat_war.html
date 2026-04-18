@@ -2,44 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Second Lylat War | Threat Records</title>
+    <title>Second Lylat War | Tactical Archive</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
-<body class="ui-page campaign-view">
+<body class="fleet-page boss-theme">
 
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="bosses.html">Boss Database</a></li>
-                <li class="active-fleet">01. SECOND LYLAT WAR</li>
+                <li class="active-fleet gold-text">SECOND LYLAT WAR</li>
             </ul>
         </div>
     </nav>
 
-    <div class="ui-container">
-        <div class="ui-header">
-            <h1 class="campaign-title">CAMPAIGN: SECOND LYLAT WAR</h1>
-            <p class="campaign-subtitle">ARCHIVED THREAT DATA - VENOMIAN HIGH COMMAND</p>
-        </div>
+    <div class="fleet-layout">
+        <aside class="ship-sidebar gold-border">
+            <div class="sidebar-header">
+                <h2 class="gold-text">WAR TARGETS</h2>
+            </div>
 
-      <div class="faction-list">
-            <a href="boss-viewer.html?model=andross_gen1" class="faction-bar boss-card">
-                <span class="f-name">ANDROSS (GENESIS)</span>
-                <span class="threat-level">THREAT: OMEGA</span>
-            </a>
-
+            <div class="ship-list">
+                <button class="ship-btn active gold-btn" onclick="updateModel('andross.glb', 'ANDROSS', 'The exiled scientist turned emperor of Venom. His experiments have twisted his form into a massive, telepathic entity.')">
+                    <span class="btn-text">ANDROSS</span>
+                </button>
 
 
 
 
+            <a href="bosses.html" class="back-btn">« RETURN TO CAMPAIGN MENU</a>
+        </aside>
 
+        <main class="viewer-section">
+            <model-viewer id="main-display" 
+                src="boss_models/andross.glb" 
+                auto-rotate camera-controls 
+                shadow-intensity="1" 
+                exposure="1.2">
+            </model-viewer>
 
-
-
-      <a href="bosses.html" class="back-link">« BACK TO CAMPAIGN SELECTION</a>
-        </div>
+            <div class="ship-description-box">
+                <h1 id="ship-name" class="gold-glow">ANDROSS</h1>
+                <p id="ship-desc">The exiled scientist turned emperor of Venom. His experiments have twisted his form into a massive, telepathic entity.</p>
+            </div>
+        </main>
     </div>
 
+    <script>
+        function updateModel(fileName, name, desc) {
+            const viewer = document.getElementById('main-display');
+            viewer.src = `boss_models/${fileName}`;
+            document.getElementById('ship-name').innerText = name;
+            document.getElementById('ship-desc').innerText = desc;
+            
+            document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
