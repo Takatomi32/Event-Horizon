@@ -522,3 +522,23 @@ starwolf-border {
     color: #f1c40f; /* Amber description text */
     max-width: 450px;
 }
+
+/*Bosses Menu*/
+
+.ui-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Keeps it centered vertically */
+    padding: 20px;
+    text-align: center;
+}
+
+.boss-title-gold {
+    font-family: 'Orbitron', sans-serif;
+    color: #f1c40f; 
+    font-size: 2.5rem; /* Large and bold for the main menu */
+    letter-spacing: 8px;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+}
