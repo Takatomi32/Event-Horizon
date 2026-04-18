@@ -542,3 +542,25 @@ starwolf-border {
     letter-spacing: 8px;
     text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
 }
+
+/*Second Lylat War*/
+
+.gold-text { color: #f1c40f !important; }
+.gold-border { border-right: 3px solid #f1c40f !important; }
+
+.gold-btn.active, .gold-btn:hover {
+    background: rgba(241, 196, 15, 0.2) !important;
+    border-color: #f1c40f !important;
+    color: #fff !important;
+}
+
+.gold-glow {
+    text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+}
+
+.boss-theme .ship-description-box p {
+    color: #f1c40f;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
