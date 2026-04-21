@@ -1,65 +1,64 @@
-/* --- THE UNIVERSAL HUD LAYOUT --- */
+/* --- RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; color: #fff; font-family: 'Rajdhani', sans-serif; overflow: hidden; }
+
+/* --- LAYOUT --- */
+.fleet-layout { display: flex; height: 100vh; }
+
+.ship-sidebar {
+    width: 350px;
+    background: rgba(10, 10, 10, 0.9);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.viewer-section {
+    flex-grow: 1;
+    position: relative;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+}
+
+model-viewer { width: 100%; height: 100%; }
+
+/* --- HUD DESCRIPTION --- */
 .ship-description-box {
     position: absolute;
-    bottom: 60px;
-    right: 60px;
-    text-align: right; /* Aligns all text to the right edge */
+    bottom: 80px;
+    right: 80px;
+    text-align: right;
     pointer-events: none;
-    z-index: 10;
-    width: auto;
-    max-width: 600px;
 }
 
 .ship-description-box h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.8rem;
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+    font-size: 3.5rem;
+    margin-bottom: 5px;
 }
 
-.ship-description-box p {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    margin: 0;
-    font-weight: 500;
-}
+/* --- THEME LOGIC --- */
 
-/* --- THEME 1: STAR FOX (BLUE) --- */
-.starfox-theme .ship-description-box h1 {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(52, 152, 219, 0.8), 
-                 0 0 30px rgba(52, 152, 219, 0.4);
-}
+/* STAR FOX (BLUE) */
+.starfox-theme .ship-sidebar { border-right: 4px solid #3498db; }
+.starfox-theme h1 { text-shadow: 0 0 20px #3498db; }
+.starfox-theme p { color: #3498db; font-size: 1.3rem; }
+.starfox-theme .ship-btn.active { border-left: 5px solid #3498db; background: rgba(52, 152, 219, 0.1); }
 
-.starfox-theme .ship-description-box p {
-    color: #3498db; /* Heroic Blue */
-}
+/* BOSSES (GOLD) */
+.boss-theme .ship-sidebar { border-right: 4px solid #f1c40f; }
+.boss-theme h1 { text-shadow: 0 0 20px #f1c40f; }
+.boss-theme p { color: #f1c40f; font-size: 1.3rem; }
+.boss-theme .ship-btn.active { border-left: 5px solid #f1c40f; background: rgba(241, 196, 15, 0.1); }
 
-.starfox-theme .gold-text, 
-.starfox-theme .gold-border {
-    color: #3498db !important;
-    border-color: #3498db !important;
-}
-
-/* --- THEME 2: BOSSES (GOLD) --- */
-.boss-theme .ship-description-box h1 {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(241, 196, 15, 0.8), 
-                 0 0 30px rgba(241, 196, 15, 0.4);
-}
-
-.boss-theme .ship-description-box p {
-    color: #f1c40f; /* Tactical Gold */
-}
-
-/* --- THEME 3: STAR WOLF (RED) --- */
-.starwolf-theme .ship-description-box h1 {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(231, 76, 60, 0.8);
-}
-
-.starwolf-theme .ship-description-box p {
-    color: #e74c3c; /* Mercenary Red */
+/* --- BUTTONS --- */
+.ship-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
 }
