@@ -1,566 +1,65 @@
-/*Main Page with logo*/
-
-:root {
-    --bg: #05070a;
-    --accent: #3498db;
-    --glow: rgba(52, 152, 219, 0.5);
-    --white: #f5f6fa;
-}
-
-body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--white);
-    font-family: 'Rajdhani', sans-serif;
-}
-
-/* Navigation */
-.navbar {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #888;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--accent);
-}
-
-.dl-btn a {
-    color: #9b59b6 !important; /* Purple accent */
-    border: 1px solid #9b59b6;
-    padding: 5px 15px;
-    border-radius: 4px;
-}
-
-/* Hero Section */
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.main-logo {
-    max-width: 600px;
-    width: 90%;
-    filter: drop-shadow(0 0 20px var(--glow));
-    margin-bottom: 20px;
-}
-
-.tagline {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-}
-
-.btn-blue {
-    background: var(--accent);
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 15px;
-    border-radius: 2px;
-}
-
-.btn-outline {
-    border: 1px solid white;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-}
-
-/*About Page*/
-.content-container {
-    margin-top: 100px;
-    padding: 40px 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.page-title {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 2.5rem;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 10px;
-    margin-bottom: 40px;
-}
-
-.info-block {
-    margin-bottom: 40px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 25px;
-    border-left: 3px solid var(--accent);
-}
-
-.info-block h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    color: #ecf0f1;
-    margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.info-block p {
-    line-height: 1.8;
-    color: #bdc3c7;
-    font-size: 1.1rem;
-}
-
-.features-list {
-    list-style: none;
-    padding: 0;
-}
-
-.features-list li {
-    margin-bottom: 15px;
-    color: #bdc3c7;
-    padding-left: 20px;
-    position: relative;
-}
-
-.features-list li::before {
-    content: "▶";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.8rem;
-    top: 4px;
-}
-
-.specs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    font-family: 'Rajdhani', sans-serif;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.specs-table th {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 2px solid var(--accent);
-    color: var(--accent);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.specs-table td {
-    padding: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    color: #bdc3c7;
-    font-size: 0.95rem;
-}
-
-.specs-table tr:hover {
-    background: rgba(52, 152, 219, 0.05);
-}
-
-.specs-table strong {
-    color: #ecf0f1;
-}
-
-/*Characters*/
-
-.team-heading {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 40px 0 20px 0;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.team-heading::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--accent), transparent);
-    margin-left: 20px;
-}
-
-.team-heading.v-red { color: #e74c3c; } /* Venomian Red */
-.team-heading.v-red::after { background: linear-gradient(to right, #e74c3c, transparent); }
-
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 60px;
-}
-
-.char-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    position: relative;
-    transition: 0.3s;
-}
-
-.char-card:hover {
-    background: rgba(52, 152, 219, 0.05);
-    border-color: var(--accent);
-}
-
-.char-card.venomian:hover {
-    background: rgba(231, 76, 60, 0.05);
-    border-color: #e74c3c;
-}
-
-.char-header h3 {
-    font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-.rank {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: var(--accent);
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-.char-card.venomian .rank { color: #e74c3c; }
-
-.char-bio {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #bdc3c7;
-    line-height: 1.5;
-}
-
-.comms-window {
-    width: 100%;
-    height: 150px;
-    background: #000;
-    border: 2px solid var(--accent);
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.portrait {
-    height: 100%;
-    width: auto;
-    filter: brightness(1.1) contrast(1.1);
-}
-
-/* Sci-fi Scanline Effect */
-.scanline {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 50%,
-        rgba(0,0,0,.1) 50%
-    );
-    background-size: 100% 4px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.3;
-}
-
-/* Change the comms border for Star Wolf */
-.char-card.venomian .comms-window {
-    border-color: #e74c3c;
-}
-
-.char-info {
-    text-align: left;
-}
-
-/*Models Tittles*/
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #121212; /* Dark background */
-}
-
-/* 2. The UI Container Fix */
-.ui-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;      /* Centers left-to-right */
-    justify-content: center;   /* Centers top-to-bottom */
-    min-height: 100vh;        /* Minimum 100% of Viewport Height */
-    width: 100%;
-    text-align: center;
-}
-
-/* 3. Ensure the Faction List has room to breathe */
-.faction-list {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;           /* Extra insurance for centering */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* 4. Fix for the Header Wings */
-.ui-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-
-
-/*StarFox Fleet*/
-.fleet-page {
-    margin: 0;
-    overflow: hidden;
-    height: 100vh;
-    background: #000;
-}
-
-.fleet-layout {
-    display: flex;
-    height: 100vh;
-    padding-top: 70px; /* Space for Navbar */
-}
-
-/* --- SIDEBAR (LEFT) --- */
-.ship-sidebar {
-    width: 380px; /* Slightly wider for bigger text */
-    background: rgba(0, 0, 0, 0.9);
-    border-right: 3px solid var(--accent);
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-}
-
-.sidebar-header h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    color: var(--accent);
-    letter-spacing: 2px;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-}
-
-.ship-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #888;
-    padding: 20px;
-    margin-bottom: 10px;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.ship-btn .btn-text {
-    font-size: 1rem; /* Bigger button text */
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.ship-btn.active, .ship-btn:hover {
-    background: rgba(52, 152, 219, 0.2);
-    border-color: var(--accent);
-    color: #fff;
-}
-
-/* --- VIEWPORT (RIGHT) --- */
-.viewer-section {
-    flex: 1; /* Takes up all remaining space */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #0e1117 0%, #000 100%);
-}
-
-#main-display {
-    width: 100%;
-    height: 100%;
-    outline: none;
-}
-
-/* --- HUGE DESCRIPTION TEXT --- */
+/* --- THE UNIVERSAL HUD LAYOUT --- */
 .ship-description-box {
     position: absolute;
-    bottom: 240px;
+    bottom: 60px;
     right: 60px;
-    text-align: right;
+    text-align: right; /* Aligns all text to the right edge */
     pointer-events: none;
+    z-index: 10;
+    width: auto;
+    max-width: 600px;
 }
 
 .ship-description-box h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1rem; /* HUGE SHIP NAME */
-    margin: 0;
-    color: #fff;
+    font-size: 2.8rem;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    text-shadow: 0 0 20px var(--accent);
+    letter-spacing: 4px;
 }
 
 .ship-description-box p {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1rem; /* Bigger description */
-    color: var(--accent);
-    max-width: 500px;
-    margin-top: 10px;
-    line-height: 1.2;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 500;
 }
 
-.back-btn {
-    margin-top: auto;
-    color: #555;
-    text-decoration: none;
-    font-size: 2rem;
-    text-align: center;
-    padding-top: 20px;
+/* --- THEME 1: STAR FOX (BLUE) --- */
+.starfox-theme .ship-description-box h1 {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(52, 152, 219, 0.8), 
+                 0 0 30px rgba(52, 152, 219, 0.4);
 }
 
-
-/*Starwolf Fleet*/
-
-starwolf-border {
-    border-right: 3px solid #e74c3c !important;
+.starfox-theme .ship-description-box p {
+    color: #3498db; /* Heroic Blue */
 }
 
-/* Change the button hover color to Red */
-.wolf-btn:hover, .wolf-btn.active {
-    background: rgba(231, 76, 60, 0.2) !important;
-    border-color: #e74c3c !important;
-    color: #fff !important;
+.starfox-theme .gold-text, 
+.starfox-theme .gold-border {
+    color: #3498db !important;
+    border-color: #3498db !important;
 }
 
-/* Background glow for the viewer */
-.starwolf-theme .viewer-section {
-    background: radial-gradient(circle, #1a0a0a 0%, #000 100%) !important;
-}
-
-/* Custom Red HUD Line for the info box */
-.starwolf-theme .ship-description-box p {
-    color: #e74c3c !important;
-}
-
-
-/*Second Lylat War Bosses*/
-.boss-campaign-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    color: #f1c40f; /* Gold/Amber */
-    letter-spacing: 4px;
-    text-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
-}
-
-/* Sidebar for Boss Pages */
-.boss-sidebar {
-    border-right: 3px solid #f1c40f !important;
-}
-
-/* Boss Buttons */
-.boss-sidebar .ship-btn.active {
-    background: rgba(241, 196, 15, 0.15) !important;
-    border-color: #f1c40f !important;
-    color: #fff !important;
-}
-
-/* HUD Title on the Viewer */
-.ship-description-box h1 {
-    font-size: 3rem;
-    color: #fff;
-    text-shadow: 0 0 10px #f1c40f;
-}
-
-.ship-description-box p {
-    font-size: 1.2rem;
-    color: #f1c40f; /* Amber description text */
-    max-width: 450px;
-}
-
-/*Bosses Menu*/
-
-.ui-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh; /* Keeps it centered vertically */
-    padding: 20px;
-    text-align: center;
-}
-
-.boss-title-gold {
-    font-family: 'Orbitron', sans-serif;
-    color: #f1c40f; 
-    font-size: 2.5rem; /* Large and bold for the main menu */
-    letter-spacing: 8px;
-    text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
-}
-
-/*Second Lylat War*/
-
-.gold-text { color: #f1c40f !important; }
-.gold-border { border-right: 3px solid #f1c40f !important; }
-
-.gold-btn.active, .gold-btn:hover {
-    background: rgba(241, 196, 15, 0.2) !important;
-    border-color: #f1c40f !important;
-    color: #fff !important;
-}
-
-.gold-glow {
-    text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+/* --- THEME 2: BOSSES (GOLD) --- */
+.boss-theme .ship-description-box h1 {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(241, 196, 15, 0.8), 
+                 0 0 30px rgba(241, 196, 15, 0.4);
 }
 
 .boss-theme .ship-description-box p {
-    color: #f1c40f;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.4;
+    color: #f1c40f; /* Tactical Gold */
+}
+
+/* --- THEME 3: STAR WOLF (RED) --- */
+.starwolf-theme .ship-description-box h1 {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(231, 76, 60, 0.8);
+}
+
+.starwolf-theme .ship-description-box p {
+    color: #e74c3c; /* Mercenary Red */
 }
