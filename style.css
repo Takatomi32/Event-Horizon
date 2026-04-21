@@ -1,64 +1,98 @@
-/* --- RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: 'Rajdhani', sans-serif; overflow: hidden; }
+/* Main Menu */
 
-/* --- LAYOUT --- */
-.fleet-layout { display: flex; height: 100vh; }
+:root {
+    --bg: #05070a;
+    --accent: #3498db;
+    --glow: rgba(52, 152, 219, 0.5);
+    --white: #f5f6fa;
+}
 
-.ship-sidebar {
-    width: 350px;
-    background: rgba(10, 10, 10, 0.9);
-    padding: 30px;
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    z-index: 10;
+    justify-content: center;
 }
 
-.viewer-section {
-    flex-grow: 1;
-    position: relative;
-    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
-model-viewer { width: 100%; height: 100%; }
-
-/* --- HUD DESCRIPTION --- */
-.ship-description-box {
-    position: absolute;
-    bottom: 80px;
-    right: 80px;
-    text-align: right;
-    pointer-events: none;
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-.ship-description-box h1 {
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+}
+
+.dl-btn a {
+    color: #9b59b6 !important; /* Purple accent */
+    border: 1px solid #9b59b6;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-logo {
+    max-width: 600px;
+    width: 90%;
+    filter: drop-shadow(0 0 20px var(--glow));
+    margin-bottom: 20px;
+}
+
+.tagline {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    margin-bottom: 5px;
+    color: var(--accent);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
-/* --- THEME LOGIC --- */
+.btn-blue {
+    background: var(--accent);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    border-radius: 2px;
+}
 
-/* STAR FOX (BLUE) */
-.starfox-theme .ship-sidebar { border-right: 4px solid #3498db; }
-.starfox-theme h1 { text-shadow: 0 0 20px #3498db; }
-.starfox-theme p { color: #3498db; font-size: 1.3rem; }
-.starfox-theme .ship-btn.active { border-left: 5px solid #3498db; background: rgba(52, 152, 219, 0.1); }
-
-/* BOSSES (GOLD) */
-.boss-theme .ship-sidebar { border-right: 4px solid #f1c40f; }
-.boss-theme h1 { text-shadow: 0 0 20px #f1c40f; }
-.boss-theme p { color: #f1c40f; font-size: 1.3rem; }
-.boss-theme .ship-btn.active { border-left: 5px solid #f1c40f; background: rgba(241, 196, 15, 0.1); }
-
-/* --- BUTTONS --- */
-.ship-btn {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    text-align: left;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
 }
