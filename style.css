@@ -432,3 +432,45 @@ body {
 {
     color: #e74c3c !important;
 }
+
+
+/* Bosses Campaign Selection */
+.gold-glow-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+    letter-spacing: 5px;
+}
+
+.gold-bg {
+    background-color: #f1c40f !important;
+}
+
+.boss-campaign-bar {
+    border-left: 4px solid #f1c40f !important;
+    background: linear-gradient(to right, rgba(241, 196, 15, 0.05), transparent) !important;
+    transition: 0.4s ease;
+}
+
+.boss-campaign-bar:hover {
+    background: linear-gradient(to right, rgba(241, 196, 15, 0.2), transparent) !important;
+    transform: translateX(10px);
+    box-shadow: -5px 0 15px rgba(241, 196, 15, 0.3);
+}
+
+.boss-campaign-bar .f-name {
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.boss-campaign-bar:hover .f-name {
+    color: #f1c40f;
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+.boss-campaign-bar .f-number {
+    color: #f1c40f;
+    font-family: 'Orbitron', sans-serif;
+    margin-right: 20px;
+    opacity: 0.6;
+}
