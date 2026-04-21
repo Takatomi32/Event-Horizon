@@ -413,14 +413,15 @@ body {
 
 
 /* StarWolf Fleet */
-.starwolf-border {
+.starwolf-border 
+{
     border-right: 3px solid #e74c3c !important;
 }
 
 .wolf-btn:hover, .wolf-btn.active {
     background: rgba(231, 76, 60, 0.2) !important;
     border-color: #e74c3c !important;
-    color: #fff !important;
+    color: #e74c3c !important;
 }
 
 .starwolf-theme .viewer-section {
