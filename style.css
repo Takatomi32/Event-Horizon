@@ -328,7 +328,7 @@ body {
 
 .sidebar-header h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1rem;
     color: var(--accent);
     letter-spacing: 2px;
     border-bottom: 1px solid var(--accent);
@@ -385,7 +385,7 @@ body {
 
 .ship-description-box h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 4rem; /* HUGE SHIP NAME */
+    font-size: 2rem; /* HUGE SHIP NAME */
     margin: 0;
     color: #fff;
     text-transform: uppercase;
@@ -395,7 +395,7 @@ body {
 
 .ship-description-box p {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.8rem; /* Bigger description */
+    font-size: 1.2rem; /* Bigger description */
     color: var(--accent);
     max-width: 500px;
     margin-top: 10px;
