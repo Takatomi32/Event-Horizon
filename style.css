@@ -471,7 +471,7 @@ body {
 .boss-campaign-bar .f-number {
     color: #f1c40f;
     font-family: 'Orbitron', sans-serif;
-    margin-right: 20px;
+    margin-right: 50px;
     opacity: 0.6;
 }
 
@@ -485,7 +485,7 @@ body {
 }
 
 .huge-title {
-    font-size: 4rem; /* Big, imposing header */
+    font-size: 2rem; /* Big, imposing header */
     letter-spacing: 12px;
     margin-bottom: 5px;
 }
