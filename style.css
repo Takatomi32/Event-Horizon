@@ -548,3 +548,75 @@ body {
 .back-link-gold:hover {
     color: #f1c40f;
 }
+
+/* --- THE DEAD CENTER FIX --- */
+
+.boss-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centers horizontally */
+    justify-content: center;   /* Centers vertically */
+    height: 100vh;            /* Full height of the screen */
+    width: 100%;              /* Full width of the screen */
+    text-align: center;
+    background: #000;
+    
+    /* These ensure it ignores any parent sidebars */
+    position: fixed;          
+    top: 0;
+    left: 0;
+    z-index: 999;             
+}
+
+/* --- TEXT REFINEMENTS --- */
+
+.archive-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 8px;
+    margin-bottom: 80px; 
+    color: #fff;
+    text-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+}
+
+.campaign-selection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Space between the campaign blocks */
+}
+
+.campaign-hero-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campaign-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    color: #f1c40f;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    opacity: 0.7;
+}
+
+.campaign-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- HOVER GLOW --- */
+
+.campaign-hero-link:hover .campaign-name {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.8);
+    transform: scale(1.05); /* Very slight grow on hover */
+}
+
+.menu-footer {
+    margin-top: 100px;
+}
