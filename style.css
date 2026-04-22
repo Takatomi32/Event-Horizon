@@ -474,3 +474,89 @@ body {
     margin-right: 20px;
     opacity: 0.6;
 }
+
+.boss-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    text-align: center;
+}
+
+.huge-title {
+    font-size: 4rem; /* Big, imposing header */
+    letter-spacing: 12px;
+    margin-bottom: 5px;
+}
+
+.center-header .subtitle {
+    color: #888;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 60px;
+}
+
+.campaign-selection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between the big titles */
+}
+
+.campaign-hero-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.campaign-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    color: #f1c40f;
+    letter-spacing: 5px;
+    opacity: 0.6;
+    margin-bottom: 5px;
+}
+
+.campaign-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem; /* Large campaign titles */
+    color: #fff;
+    letter-spacing: 8px;
+    transition: all 0.4s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effects */
+.campaign-hero-link:hover {
+    transform: scale(1.05);
+}
+
+.campaign-hero-link:hover .campaign-name {
+    color: #f1c40f;
+    text-shadow: 0 0 30px rgba(241, 196, 15, 0.6);
+}
+
+.campaign-hero-link:hover .campaign-num {
+    opacity: 1;
+    letter-spacing: 10px; /* Expands slightly on hover */
+    transition: 0.4s ease;
+}
+
+.back-link-gold {
+    margin-top: 50px;
+    display: inline-block;
+    color: #f1c40f;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.back-link-gold:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px #f1c40f;
+}
