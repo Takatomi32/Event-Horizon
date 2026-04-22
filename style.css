@@ -485,7 +485,7 @@ body {
 }
 
 .huge-title {
-    font-size: 0.5rem; /* Big, imposing header */
+    font-size: 20rem; /* Big, imposing header */
     letter-spacing: 12px;
     margin-bottom: 5px;
 }
@@ -522,7 +522,7 @@ body {
 
 .campaign-name {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem; /* Large campaign titles */
+    font-size: 1.5rem; /* Large campaign titles */
     color: #fff;
     letter-spacing: 8px;
     transition: all 0.4s ease;
