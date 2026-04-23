@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Archive: Talan Incident | Event Horizon</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body class="boss-theme">
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bosses.html">Boss Database</a></li>
+                <li class="active-fleet">RECORD 03 // TALAN INCIDENT</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="fleet-layout">
+        <aside class="ship-sidebar">
+            <div class="sidebar-header">
+                <h2>TALAN INCIDENT BOSSES</h2>
+                <div class="status-indicator">TARGETING ACTIVE</div>
+            </div>
+            
+            <div class="ship-list">
+                <button class="ship-btn active" onclick="updateModel('heavy_carrier.glb', 'HEAVY CARRIER', 'The backbone of the Cornerian fleet. During the Talan Incident, these vessels transitioned from peacekeepers to primary aggressors, utilizing heavy dual-hull plating to shrug off standard Arwing fire.')">
+                    <span class="btn-text">HEAVY CARRIER</span>
+                </button>
+
+                <button class="ship-btn" onclick="updateModel('mirage_dragon.glb', 'MIRAGE DRAGON', 'A specialized bio-mechanical interceptor. Its refractive hull allows it to ambush targets within the Talan nebulae. Approach with extreme caution.')">
+                    <span class="btn-text">MIRAGE DRAGON</span>
+                </button>
+
+                <button class="ship-btn" onclick="updateModel('tektron.glb', 'TEKTRON', 'An autonomous AI sentinel activated to enforce the Cornerian blockade. It possesses adaptive combat logic and high-energy discharge weaponry.')">
+                    <span class="btn-text">TEKTRON</span>
+                </button>
+            </div>
+
+            <a href="bosses.html" class="back-btn">« SYSTEM HUB</a>
+        </aside>
+
+        <main class="viewer-section">
+            <model-viewer id="main-display" 
+                src="models/bosses/cornerian_heavy_cruiser.glb" 
+                auto-rotate camera-controls 
+                shadow-intensity="1" 
+                exposure="1.2"
+                camera-orbit="45deg 75deg 130%"
+                min-camera-orbit="auto auto 10m">
+            </model-viewer>
+
+            <div class="ship-description-box">
+                <h1 id="ship-name">HEAVY CARRIER</h1>
+                <p id="ship-desc">The backbone of the Cornerian fleet. During the Talan Incident, these vessels transitioned from peacekeepers to primary aggressors, utilizing heavy dual-hull plating to shrug off standard Arwing fire.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function updateModel(fileName, name, desc) {
+            const viewer = document.getElementById('main-display');
+            // Path leads to your boss models folder
+            viewer.src = `models/bosses/${fileName}`;
+            document.getElementById('ship-name').innerText = name;
+            document.getElementById('ship-desc').innerText = desc;
+            
+            // UI Highlight Logic
+            document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
