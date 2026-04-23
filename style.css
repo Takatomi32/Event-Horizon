@@ -522,7 +522,6 @@ body {
     transition: 0.3s ease;
 }
 
-/* Hover State - Subtle and Sleek */
 .campaign-hero-link:hover {
     transform: translateY(-3px); /* Subtle lift instead of big scale */
 }
@@ -549,8 +548,6 @@ body {
     color: #f1c40f;
 }
 
-/* --- THE DEAD CENTER FIX --- */
-
 .boss-menu-wrapper {
     display: flex;
     flex-direction: column;
@@ -567,8 +564,6 @@ body {
     left: 0;
     z-index: 999;             
 }
-
-/* --- TEXT REFINEMENTS --- */
 
 .archive-header {
     font-family: 'Orbitron', sans-serif;
@@ -608,8 +603,6 @@ body {
     letter-spacing: 5px;
     transition: all 0.3s ease;
 }
-
-/* --- HOVER GLOW --- */
 
 .campaign-hero-link:hover .campaign-name {
     color: #fff;
