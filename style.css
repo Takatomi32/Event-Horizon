@@ -521,3 +521,57 @@ body {
 .back-link-gold:hover {
     color: #f1c40f;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Talan Bosses */
+.boss-theme .sidebar-header h2 {
+    color: #f1c40f;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.status-indicator {
+    font-size: 0.7rem;
+    color: #f1c40f;
+    background: rgba(241, 196, 15, 0.1);
+    padding: 2px 8px;
+    display: inline-block;
+    border: 1px solid #f1c40f;
+    margin-top: 5px;
+    border-radius: 3px;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* Button style adjustments for Talan */
+.boss-theme .ship-btn {
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    margin-bottom: 12px;
+}
+
+.boss-theme .ship-btn.active {
+    border-left: 5px solid #f1c40f;
+    background: rgba(241, 196, 15, 0.1);
+}
