@@ -24,21 +24,20 @@
                 <h2>TALAN INCIDENT BOSSES</h2>
                 <div class="status-indicator">TARGETING ACTIVE</div>
             </div>
-            
-            <div class="ship-list">
-    <button class="ship-btn active" onclick="updateModel(this, 'heavy_carrier.glb', 'HEAVY CARRIER', 'The pride of the CDF fleet. During the Talan Incident, these vessels transitioned from peacekeepers to primary aggressors.')">
-        <span class="btn-text">HEAVY CRUISER</span>
-    </button>
 
-    <button class="ship-btn" onclick="updateModel(this, 'mirage_dragon.glb', 'MIRAGE DRAGON', 'A specialized bio-mechanical interceptor. Its refractive hull allows it to ambush targets within the Talan nebulae.')">
-        <span class="btn-text">MIRAGE DRAGON</span>
-    </button>
+                <div class="ship-list">
+            <button class="ship-btn" onclick="updateModel('heavy_carrier.glb', 'HEAVY CARRIER', 'The pride of the CDF fleet. During the Talan Incident, these vessels transitioned from peacekeepers to primary aggressors.')">
+                    <span class="btn-text">HEAVY CARRIER</span>
+                </button>
 
-    <button class="ship-btn" onclick="updateModel(this, 'tektron.glb', 'TEKTRON', 'An autonomous AI sentinel activated to enforce the Cornerian blockade. It possesses adaptive combat logic.')">
-        <span class="btn-text">TEKTRON</span>
-    </button>
-</div>
+            <button class="ship-btn" onclick="updateModel('mirage_dragon.glb', 'MIRAGE DRAGON', 'A specialized bio-mechanical interceptor. Its refractive hull allows it to ambush targets within the Talan nebulae.')">
+                    <span class="btn-text">MIRAGE DRAGON</span>
+                </button>
 
+            <button class="ship-btn" onclick="updateModel('tektron.glb', 'TEKTRON', 'An autonomous AI sentinel activated to enforce the Cornerian blockade. It possesses adaptive combat logic.')">
+                    <span class="btn-text">TEKTRON</span>
+                </button>
+                    
             <a href="bosses.html" class="back-btn">« SYSTEM HUB</a>
         </aside>
 
@@ -47,9 +46,7 @@
                 src="talan_bosses/heavy_carrier.glb" 
                 auto-rotate camera-controls 
                 shadow-intensity="1" 
-                exposure="1.2"
-                camera-orbit="45deg 75deg 130%"
-                min-camera-orbit="auto auto 10m">
+                exposure="1.2">
             </model-viewer>
 
             <div class="ship-description-box">
@@ -60,24 +57,16 @@
     </div>
 
     <script>
-        function updateModel(btn, fileName, name, desc) {
-    const viewer = document.getElementById('main-display');
-    
-    // 1. Update the Model Source
-    // Double check that your files are named EXACTLY like this in the folder
-    viewer.src = `models/bosses/${fileName}`;
-    
-    // 2. Update the Text
-    document.getElementById('ship-name').innerText = name;
-    document.getElementById('ship-desc').innerText = desc;
-    
-    // 3. Update the Button Highlight
-    // Remove 'active' from all buttons
-    document.querySelectorAll('.ship-btn').forEach(b => b.classList.remove('active'));
-    
-    // Add 'active' to the one we just clicked
-    btn.classList.add('active');
-}
+        function updateModel(fileName, name, desc) {
+            const viewer = document.getElementById('main-display');
+            viewer.src = `talan_bosses/${fileName}`;
+            document.getElementById('ship-name').innerText = name;
+            document.getElementById('ship-desc').innerText = desc;
+            
+            // Handle active button state
+            document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
     </script>
 
 </body>
