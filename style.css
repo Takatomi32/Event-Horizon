@@ -435,164 +435,55 @@ body {
 
 
 /* Bosses Campaign Selection */
-.gold-glow-text {
-    font-family: 'Orbitron', sans-serif;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
-    letter-spacing: 5px;
-}
-
-.gold-bg {
-    background-color: #f1c40f !important;
-}
-
-.boss-campaign-bar {
-    border-left: 4px solid #f1c40f !important;
-    background: linear-gradient(to right, rgba(241, 196, 15, 0.05), transparent) !important;
-    transition: 0.4s ease;
-}
-
-.boss-campaign-bar:hover {
-    background: linear-gradient(to right, rgba(241, 196, 15, 0.2), transparent) !important;
-    transform: translateX(10px);
-    box-shadow: -5px 0 15px rgba(241, 196, 15, 0.3);
-}
-
-.boss-campaign-bar .f-name {
-    color: #ccc;
-    transition: 0.3s;
-}
-
-.boss-campaign-bar:hover .f-name {
-    color: #f1c40f;
-    text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
-}
-
-.boss-campaign-bar .f-number {
-    color: #f1c40f;
-    font-family: 'Orbitron', sans-serif;
-    margin-right: 10px;
-    opacity: 0.6;
-}
-
-.boss-menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    text-align: center;
-    padding: 20px;
-}
-
-.archive-header {
-    font-size: 2rem; /* Reduced from 4rem */
-    letter-spacing: 6px;
-    margin-bottom: 50px;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
-}
-
-.campaign-selection-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* Tighter spacing */
-}
-
-.campaign-hero-link {
-    text-decoration: none;
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.campaign-num {
-    display: block;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.8rem;
-    color: #f1c40f;
-    letter-spacing: 3px;
-    margin-bottom: 2px;
-}
-
-.campaign-name {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem; /* Reduced from 3.5rem */
-    color: rgba(255, 255, 255, 0.8);
-    letter-spacing: 4px;
-    transition: 0.3s ease;
-}
-
-.campaign-hero-link:hover {
-    transform: translateY(-3px); /* Subtle lift instead of big scale */
-}
-
-.campaign-hero-link:hover .campaign-name {
-    color: #f1c40f;
-    text-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
-}
-
-.menu-footer {
-    margin-top: 60px;
-}
-
-.back-link-gold {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.75rem;
-    color: #666;
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.back-link-gold:hover {
-    color: #f1c40f;
-}
-
 .boss-menu-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;      /* Centers horizontally */
-    justify-content: center;   /* Centers vertically */
-    height: 100vh;            /* Full height of the screen */
-    width: 100%;              /* Full width of the screen */
-    text-align: center;
-    background: #000;
+    align-items: center;      /* Horizontal Center */
+    justify-content: center;   /* Vertical Center */
     
-    /* These ensure it ignores any parent sidebars */
-    position: fixed;          
+    position: fixed;           /* Pulls it out of the layout flow */
     top: 0;
     left: 0;
-    z-index: 999;             
+    width: 100vw;              /* Force full browser width */
+    height: 100vh;             /* Force full browser height */
+    
+    background: #000;          /* Deep black background */
+    margin: 0 !important;      /* Kill any accidental offsets */
+    padding: 0 !important;
+    text-align: center;
+    z-index: 9999;
 }
 
 .archive-header {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 8px;
-    margin-bottom: 80px; 
+    font-size: 2.2rem;
+    letter-spacing: 10px;
+    margin-bottom: 70px; 
     color: #fff;
-    text-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+    text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+    text-transform: uppercase;
 }
 
 .campaign-selection-list {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Space between the campaign blocks */
+    gap: 45px;                /* Consistent spacing between titles */
 }
 
 .campaign-hero-link {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;      /* Centers sub-text over titles */
+    transition: transform 0.3s ease;
 }
 
 .campaign-num {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #f1c40f;
-    letter-spacing: 4px;
-    margin-bottom: 8px;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
     opacity: 0.7;
 }
 
@@ -600,16 +491,33 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
     color: rgba(255, 255, 255, 0.8);
-    letter-spacing: 5px;
-    transition: all 0.3s ease;
+    letter-spacing: 4px;
+    transition: 0.3s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+.campaign-hero-link:hover {
+    transform: scale(1.05);
 }
 
 .campaign-hero-link:hover .campaign-name {
     color: #fff;
-    text-shadow: 0 0 20px rgba(241, 196, 15, 0.8);
-    transform: scale(1.05); /* Very slight grow on hover */
+    text-shadow: 0 0 20px #f1c40f;
 }
 
 .menu-footer {
-    margin-top: 100px;
+    margin-top: 80px;
+}
+
+.back-link-gold {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #444;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.back-link-gold:hover {
+    color: #f1c40f;
 }
