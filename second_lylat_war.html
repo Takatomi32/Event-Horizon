@@ -21,13 +21,10 @@
     <div class="fleet-layout">
         <aside class="ship-sidebar gold-border">
             <div class="sidebar-header">
-                <h2 class="gold-text">WAR TARGETS</h2>
+                <h2>SECOND LYLAT WAR BOSSES</h2>
+                <div class="status-indicator">TARGET ACTIVE</div>
             </div>
 
-            <div class="ship-list">
-                <button class="ship-btn active gold-btn" onclick="updateModel('andross.glb', 'ANDROSS', 'The exiled scientist turned emperor of Venom. His experiments have twisted his form into a massive, telepathic entity.')">
-                    <span class="btn-text">ANDROSS</span>
-                </button>
 
 
 
@@ -53,10 +50,11 @@
     <script>
         function updateModel(fileName, name, desc) {
             const viewer = document.getElementById('main-display');
-            viewer.src = `boss_models/${fileName}`;
+            viewer.src = `second_lylat_war/${fileName}`;
             document.getElementById('ship-name').innerText = name;
             document.getElementById('ship-desc').innerText = desc;
             
+            // Handle active button state
             document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
             event.currentTarget.classList.add('active');
         }
