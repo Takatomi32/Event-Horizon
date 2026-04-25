@@ -25,20 +25,43 @@
                 <div class="status-indicator">TARGET ACTIVE</div>
             </div>
 
+            <div class="ship-list">
+            <button class="ship-btn" onclick="updateModel('blade_barrier.glb', 'BLADE BARRIER', 'A massive orbital defense installation. It utilizes rotating kinetic shields and beam-cap emitters to create an impenetrable zone of exclusion.')">
+                    <span class="btn-text">BLADE BARRIER</span>
+                </button>
 
+            <div class="ship-list">
+            <button class="ship-btn" onclick="updateModel('attack_carrier.glb', 'ATTACK CARRIER', 'A primary Venomian capital ship capable of atmospheric entry. Featuring integrated hangar bays and heavy missile batteries.')">
+                    <span class="btn-text">ATTACK CARRIER</span>
+                </button>
 
+            <div class="ship-list">
+            <button class="ship-btn" onclick="updateModel('meteo_crusher.glb', 'METEO CRUSHER', 'A specialized asteroid-mining unit repurposed for combat. A heavy-duty rotator assembly that acts as both a shield and a weapon.')">
+                    <span class="btn-text">METEO CRUSHER</span>
+                </button>
+
+            <div class="ship-list">
+            <button class="ship-btn" onclick="updateModel('shogun_warlord.glb', 'SHOGUN WARLORD', 'An advanced heavy combat walker modified for space-superiority. Features reinforced leg-armor and dual shoulder-mounted particle cannons. Serving as the frontline commander for Venomian ground-to-orbit assaults.')">
+                    <span class="btn-text">SHOGUN WARLORD</span>
+                </button>
+
+            <div class="ship-list">
+            <button class="ship-btn" onclick="updateModel('saucerer.glb', 'SAUCERER', 'A dual-layered heavy saucer craft. Utilizes its rotating outer ring to generate a devastating wide-area energy discharge.')">
+                    <span class="btn-text">SAUCERER</span>
+                </button>
 
 
             <a href="bosses.html" class="back-btn">« RETURN TO CAMPAIGN MENU</a>
         </aside>
 
-        <main class="viewer-section">
-            <model-viewer id="main-display" 
-                src="boss_models/andross.glb" 
-                auto-rotate camera-controls 
-                shadow-intensity="1" 
-                exposure="1.2">
-            </model-viewer>
+        <model-viewer id="main-display" 
+    src="lylat_bosses/blade_barrier.glb" 
+    auto-rotate camera-controls 
+    shadow-intensity="1" 
+    exposure="1.2"
+    camera-orbit="45deg 75deg 150%" 
+    min-camera-orbit="auto auto 10m">
+</model-viewer>
 
             <div class="ship-description-box">
                 <h1 id="ship-name" class="gold-glow">ANDROSS</h1>
