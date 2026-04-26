@@ -54,18 +54,17 @@
             <a href="bosses.html" class="back-btn">« RETURN TO CAMPAIGN MENU</a>
         </aside>
 
-        <model-viewer id="main-display" 
-    src="lylat_bosses/blade_barrier.glb" 
-    auto-rotate camera-controls 
-    shadow-intensity="1" 
-    exposure="1.2"
-    camera-orbit="45deg 75deg 150%" 
-    min-camera-orbit="auto auto 10m">
-</model-viewer>
+         <main class="viewer-section">
+            <model-viewer id="main-display" 
+                src="lylat_bosses/blade_barrier.glb" 
+                auto-rotate camera-controls 
+                shadow-intensity="1" 
+                exposure="1.2">
+            </model-viewer>
 
-            <div class="ship-description-box">
-                <h1 id="ship-name" class="gold-glow">ANDROSS</h1>
-                <p id="ship-desc">The exiled scientist turned emperor of Venom. His experiments have twisted his form into a massive, telepathic entity.</p>
+          <div class="ship-description-box">
+                <h1 id="ship-name">BLADE BARRIER</h1>
+                <p id="ship-desc">A massive orbital defense installation. It utilizes rotating kinetic shields and beam-cap emitters to create an impenetrable zone of exclusion.</p>
             </div>
         </main>
     </div>
@@ -73,7 +72,7 @@
     <script>
         function updateModel(fileName, name, desc) {
             const viewer = document.getElementById('main-display');
-            viewer.src = `second_lylat_war/${fileName}`;
+            viewer.src = `lylat_bosses/${fileName}`;
             document.getElementById('ship-name').innerText = name;
             document.getElementById('ship-desc').innerText = desc;
             
