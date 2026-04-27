@@ -524,7 +524,7 @@ body {
 
 /* Second Lylat War */
 .boss-theme-lylat {
-    background-color: #050505 !important;
+    background-color: #003000 !important;
     display: flex;
     flex-direction: row-reverse !important; /* Forces Sidebar to the RIGHT */
     height: 100vh;
@@ -547,7 +547,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 3px;
-    border-bottom: 2px solid #0055ff; /* Blue accent line */
+    border-bottom: 2px solid #780000; /* Blue accent line */
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -574,15 +574,15 @@ body {
 /* Hover State - Electric Blue */
 .boss-theme-lylat .ship-btn:hover {
     background: #1a1a1a;
-    border-color: #0055ff;
+    border-color: #780000;
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 85, 255, 0.3);
 }
 
 /* Active State - Blue Background with Gold Border */
 .boss-theme-lylat .ship-btn.active {
-    background: #0055ff !important;
-    border: 1px solid #ffd700 !important;
+    background: #690000 !important;
+    border: 1px solid #BF5D00 !important;
     color: #fff !important;
     font-weight: bold;
 }
