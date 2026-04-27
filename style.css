@@ -522,7 +522,77 @@ body {
     color: #f1c40f;
 }
 
+/* Second Lylat War */
 
+.boss-theme {
+    --scan-green: #00ff66;
+    --dim-green: #00441b;
+    --black-bg: #050a05;
+    background-color: var(--black-bg);
+    color: var(--scan-green);
+    font-family: 'OCR A Std', monospace;
+}
+
+/* Sidebar with a scanline effect */
+.ship-sidebar {
+    width: 220px;
+    border-right: 1px solid var(--scan-green);
+    background: linear-gradient(180deg, rgba(0,20,0,1) 0%, rgba(0,5,0,1) 100%);
+}
+
+/* High-Density Small Buttons */
+.ship-list {
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.ship-btn {
+    width: 100%;
+    padding: 4px 8px; /* Very compact */
+    margin-bottom: 2px;
+    background: rgba(0, 40, 0, 0.3);
+    border: 1px solid var(--dim-green);
+    color: var(--scan-green);
+    font-size: 0.75rem; /* Small, tactical text */
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ship-btn:hover {
+    background: var(--dim-green);
+    border-color: var(--scan-green);
+}
+
+.ship-btn.active {
+    background: var(--scan-green);
+    color: #000;
+    box-shadow: 0 0 10px var(--scan-green);
+}
+
+/* Special Pulse for Super Andross */
+.special-entry {
+    border-color: #ffffff !important;
+    animation: scan-pulse 1.5s infinite;
+}
+
+@keyframes scan-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Custom Scrollbar for the Grid */
+.ship-list::-webkit-scrollbar {
+    width: 4px;
+}
+.ship-list::-webkit-scrollbar-thumb {
+    background: var(--scan-green);
+}
 
 
 
