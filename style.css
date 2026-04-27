@@ -525,106 +525,41 @@ body {
 
 
 /* Second Lylat War */
-.boss-theme-lylat {
-    display: flex !important;
-    flex-direction: row-reverse !important; 
-    background: #050505 !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    overflow: hidden;
-}
-
-/* Right-Side Sidebar */
-.boss-theme-lylat .ship-sidebar {
-    width: 340px !important;
-    background: #0a0a0a !important;
-    border-left: 2px solid #111 !important;
-    padding: 30px 20px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    z-index: 100;
-}
-
-/* Gold Header with Blue Accent */
 .boss-theme-lylat .sidebar-header h2 {
-    font-family: 'Orbitron', sans-serif !important;
-    color: #ffd700 !important; /* Star Fox Gold */
-    font-size: 1.1rem !important;
-    letter-spacing: 3px !important;
-    text-transform: uppercase;
-    border-bottom: 2px solid #0055ff !important; /* Star Fox Blue */
-    padding-bottom: 15px !important;
-    margin-bottom: 25px !important;
+    color: #f1c40f;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
 
-/* Pill Buttons Styling */
-.boss-theme-lylat .ship-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding-right: 5px;
+.status-indicator {
+    font-size: 0.7rem;
+    color: #f1c40f;
+    background: rgba(241, 196, 15, 0.1);
+    padding: 2px 8px;
+    display: inline-block;
+    border: 1px solid #f1c40f;
+    margin-top: 5px;
+    border-radius: 3px;
+    animation: blink 2s infinite;
 }
 
-.boss-theme-lylat .ship-btn {
-    width: 100% !important;
-    background: #151515 !important;
-    border: 1px solid #333 !important;
-    color: #888 !important;
-    padding: 14px 20px !important;
-    margin-bottom: 10px !important;
-    border-radius: 5px !important;
-    text-align: left !important;
-    font-family: 'Rajdhani', sans-serif !important;
-    font-weight: 600;
-    transition: all 0.2s ease;
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
 }
 
-/* Hover Effect: Blue Glow */
-.boss-theme-lylat .ship-btn:hover {
-    background: #1a1a1a !important;
-    border-color: #0055ff !important;
-    color: #fff !important;
-    box-shadow: 0 0 12px rgba(0, 85, 255, 0.5) !important;
+/* Button style adjustments for Talan */
+.boss-theme .ship-btn {
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    margin-bottom: 12px;
 }
 
-/* Active State: Blue Fill with Gold Border */
-.boss-theme-lylat .ship-btn.active {
-    background: #0055ff !important;
-    border: 1px solid #ffd700 !important;
-    color: #fff !important;
-    box-shadow: 0 0 15px rgba(0, 85, 255, 0.6) !important;
+.boss-theme .ship-btn.active {
+    border-left: 5px solid #f1c40f;
+    background: rgba(241, 196, 15, 0.1);
 }
-
-/* Description Box: Tucked at the bottom of the sidebar */
-.boss-theme-lylat .ship-description-box {
-    background: #000 !important;
-    border: 1px solid #222 !important;
-    padding: 20px !important;
-    margin-top: 15px !important;
-    border-radius: 4px !important;
-    pointer-events: auto !important;
-    position: static !important; /* Sits below buttons */
-}
-
-.boss-theme-lylat #ship-name {
-    color: #ffd700 !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 1.2rem !important;
-    margin-bottom: 8px !important;
-}
-
-.boss-theme-lylat #ship-description {
-    color: #666 !important;
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
-}
-
-/* Model Viewer Area */
-.boss-theme-lylat .viewer-section {
-    flex: 1 !important;
-    background: radial-gradient(circle, #0e1117 0%, #000 100%) !important;
-}
-
-
 
 
 
