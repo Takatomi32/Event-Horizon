@@ -525,7 +525,7 @@ body {
 
 
 /* Second Lylat War */
-.boss-theme-lylat .sidebar-header h2 .boss-theme .sidebar-header h2 {
+.boss-theme-lylat .sidebar-header h2 {
     color: #f1c40f;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.2rem;
@@ -560,7 +560,6 @@ body {
     border-left: 5px solid #f1c40f;
     background: rgba(241, 196, 15, 0.1);
 }
-
 
 
 
