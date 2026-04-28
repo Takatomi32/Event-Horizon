@@ -532,13 +532,13 @@ body {
     background: #000;
 }
 
-.boss-theme-lylat fleet-layout {
+.boss-theme-lylat .fleet-layout {
     display: flex;
     height: 100vh;
     padding-top: 70px; /* Space for Navbar */
 }
 
-.boss-theme-lylat ship-sidebar {
+.boss-theme-lylat .ship-sidebar {
     width: 380px; /* Slightly wider for bigger text */
     background: rgba(0, 0, 0, 0.9);
     border-right: 3px solid var(--accent);
@@ -548,7 +548,7 @@ body {
     z-index: 10;
 }
 
-.boss-theme-lylat sidebar-header h2 {
+.boss-theme-lylat .sidebar-header h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     color: var(--accent);
@@ -558,7 +558,7 @@ body {
     margin-bottom: 30px;
 }
 
-.boss-theme-lylat ship-btn {
+.boss-theme-lylat .ship-btn {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #888;
@@ -582,7 +582,7 @@ body {
     color: #fff;
 }
 
-.boss-theme-lylat viewer-section {
+.boss-theme-lylat .viewer-section {
     flex: 1; /* Takes up all remaining space */
     position: relative;
     display: flex;
@@ -597,7 +597,7 @@ body {
     outline: none;
 }
 
-.boss-theme-lylat ship-description-box {
+.boss-theme-lylat .ship-description-box {
     position: absolute;
     bottom: 60px;
     right: 60px;
@@ -605,7 +605,7 @@ body {
     pointer-events: none;
 }
 
-.boss-theme-lylat ship-description-box h1 {
+.boss-theme-lylat .ship-description-box h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem; /* HUGE SHIP NAME */
     margin: 0;
@@ -615,7 +615,7 @@ body {
     text-shadow: 0 0 20px var(--accent);
 }
 
-.boss-theme-lylat ship-description-box p {
+.boss-theme-lylat .ship-description-box p {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.2rem; /* Bigger description */
     color: var(--accent);
@@ -624,7 +624,7 @@ body {
     line-height: 1.2;
 }
 
-.boss-theme-lylat back-btn {
+.boss-theme-lylat .back-btn {
     margin-top: auto;
     color: #555;
     text-decoration: none;
