@@ -526,6 +526,115 @@ body {
 
 /* Second Lylat War */
 
+.boss-theme-lylat {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: row-reverse; /* Sidebar on the RIGHT */
+}
+
+/* Sidebar Styling */
+.boss-theme-lylat .ship-sidebar {
+    width: 320px;
+    background: #0a0a0a;
+    border-left: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 100;
+}
+
+/* Gold Header with Blue Accent */
+.boss-theme-lylat .sidebar-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffd700; 
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #0055ff;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+/* The List: Optimized for 19 bosses */
+.boss-theme-lylat .ship-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Tight gap to fit more buttons */
+}
+
+/* Smaller Pill Buttons */
+.boss-theme-lylat .ship-btn {
+    background: #151515;
+    border: 1px solid #333;
+    color: #888;
+    padding: 10px 15px; /* Compact height */
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.boss-theme-lylat .ship-btn .btn-text {
+    font-size: 0.85rem; 
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Hover: Blue Glow */
+.boss-theme-lylat .ship-btn:hover {
+    border-color: #0055ff;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Active: Blue Fill + Gold Border */
+.boss-theme-lylat .ship-btn.active {
+    background: #0055ff !important;
+    border-color: #ffd700 !important;
+    color: #fff !important;
+}
+
+/* Main Model Area */
+.boss-theme-lylat .viewer-section {
+    flex: 1;
+    position: relative;
+    background: radial-gradient(circle, #111 0%, #000 100%);
+}
+
+/* Description Box (Pinned to Bottom Left of screen) */
+.boss-theme-lylat .ship-description-box {
+    position: absolute;
+    bottom: 30px;
+    left: 30px; 
+    max-width: 500px;
+    pointer-events: none;
+    text-align: left;
+}
+
+.boss-theme-lylat .ship-description-box h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #0055ff;
+}
+
+.boss-theme-lylat .ship-description-box p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    color: #ffd700;
+    margin-top: 5px;
+}
 
 
 
