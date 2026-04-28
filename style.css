@@ -570,7 +570,7 @@ body {
 }
 
 .boss-theme-lylat ship-btn .btn-text {
-    font-size: 1rem; /* Bigger button text */
+    font-size: .5rem; /* Bigger button text */
     font-family: 'Rajdhani', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
