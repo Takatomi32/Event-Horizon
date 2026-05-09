@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sauria Crisis | Tactical Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body class="boss-theme-sauria">
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bosses.html">Boss Database</a></li>
+                <li class="active-fleet gold-text">SAURIA CRISIS</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="fleet-layout">
+        <aside class="ship-sidebar gold-border">
+            <div class="sidebar-header">
+                <h2>TACTICAL DATABASE</h2>
+                <div class="status-indicator">TARGETS IDENTIFIED</div>
+            </div>
+
+            <div class="ship-list">
+                <button class="ship-btn active" onclick="updateModel('maximus.glb', 'MAXIMUS', '')">
+                    <span class="btn-text">MAXIMUS</span>
+                </button>
+            </div>
+
+            <a href="bosses.html" class="back-btn">« RETURN TO CAMPAIGN MENU</a>
+        </aside>
+
+        <main class="viewer-section">
+            <model-viewer id="main-display" 
+                src="sauria_bosses/maximus.glb" 
+                auto-rotate 
+                camera-controls 
+                shadow-intensity="2" 
+                exposure="1.2"
+                environment-image="neutral">
+            </model-viewer>
+
+            <div class="ship-description-box">
+                <div class="threat-badge">THREAT LEVEL: CRITICAL</div>
+                <h1 id="ship-name">MAXIMUS</h1>
+                <p id="ship-desc">A massive orbital defense installation. It utilizes rotating kinetic shields and beam-cap emitters to create an impenetrable zone of exclusion.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+     function updateModel(fileName, name, desc) {
+    const viewer = document.getElementById('main-display');
+    const badge = document.querySelector('.threat-badge');
+    const nameElement = document.getElementById('ship-name');
+    const descElement = document.getElementById('ship-desc');
+
+    // 1. Update Model and Text
+    viewer.src = `sauria_bosses/${fileName}`;
+    nameElement.innerText = name;
+    descElement.innerText = desc;
+    
+    // 2. Handle UI Active State (Fixed 'event' reference)
+    document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
+    if (window.event) {
+        window.event.currentTarget.classList.add('active');
+    }
+
+    // 3. Logic for Sauria Threat Levels
+    // Using a switch makes it easier to add "Category-X" bosses later
+    switch (name) {
+        case "GENERAL SCALES":
+        case "MAXIMUS":
+            badge.innerText = "THREAT LEVEL: CATEGORY-X";
+            badge.style.color = "#ff4d4d"; // Aggressive Red
+            badge.style.borderColor = "#ff4d4d";
+            break;
+        
+        default:
+            badge.innerText = "THREAT LEVEL: CRITICAL";
+            badge.style.color = "#2ecc71"; // Sauria Green
+            badge.style.borderColor = "#2ecc71";
+            break;
+    }
+}
+    </script>
+</body>
+</html>
