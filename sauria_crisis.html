@@ -26,7 +26,7 @@
             </div>
 
             <div class="ship-list">
-                <button class="ship-btn active" onclick="updateModel('maximus.glb', 'MAXIMUS', '')">
+                <button class="ship-btn active" onclick="updateModel('maximus.glb', 'MAXIMUS', 'A colossal bio-mechanical predator reconstructed through SharpClaw alchemy and Venomian tech.')">
                     <span class="btn-text">MAXIMUS</span>
                 </button>
             </div>
@@ -47,7 +47,7 @@
             <div class="ship-description-box">
                 <div class="threat-badge">THREAT LEVEL: CRITICAL</div>
                 <h1 id="ship-name">MAXIMUS</h1>
-                <p id="ship-desc">A massive orbital defense installation. It utilizes rotating kinetic shields and beam-cap emitters to create an impenetrable zone of exclusion.</p>
+                <p id="ship-desc">A colossal bio-mechanical predator reconstructed through SharpClaw alchemy and Venomian tech.</p>
             </div>
         </main>
     </div>
@@ -74,7 +74,9 @@
     // Using a switch makes it easier to add "Category-X" bosses later
     switch (name) {
         case "GENERAL SCALES":
-        case "MAXIMUS":
+        case "KAMERIAN HEART"
+        case "DRAKOR"
+        case "DARK MATTER DRAKOR"
             badge.innerText = "THREAT LEVEL: CATEGORY-X";
             badge.style.color = "#ff4d4d"; // Aggressive Red
             badge.style.borderColor = "#ff4d4d";
