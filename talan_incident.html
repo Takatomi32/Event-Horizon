@@ -56,16 +56,28 @@
         </main>
     </div>
 
-    <script>
+   <script>
         function updateModel(fileName, name, desc) {
             const viewer = document.getElementById('main-display');
-            viewer.src = `talan_bosses/${fileName}`;
+            viewer.src = `lylat_bosses/${fileName}`;
             document.getElementById('ship-name').innerText = name;
             document.getElementById('ship-desc').innerText = desc;
             
             // Handle active button state
             document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
             event.currentTarget.classList.add('active');
+
+            // Change threat badge for final bosses
+            const badge = document.querySelector('.threat-badge');
+            if(name.includes("General Pepper")) {
+                badge.innerText = "THREAT LEVEL: CATEGORY-X";
+                badge.style.color = "#ff4d4d";
+                badge.style.borderColor = "#ff4d4d";
+            } else {
+                badge.innerText = "THREAT LEVEL: CRITICAL";
+                badge.style.color = "#f1c40f";
+                badge.style.borderColor = "#f1c40f";
+            }
         }
     </script>
 
