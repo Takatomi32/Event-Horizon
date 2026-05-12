@@ -56,29 +56,41 @@
         </main>
     </div>
 
-   <script>
-        function updateModel(fileName, name, desc) {
-            const viewer = document.getElementById('main-display');
-            viewer.src = `lylat_bosses/${fileName}`;
-            document.getElementById('ship-name').innerText = name;
-            document.getElementById('ship-desc').innerText = desc;
-            
-            // Handle active button state
-            document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+    <script>
+     function updateModel(fileName, name, desc) {
+    const viewer = document.getElementById('main-display');
+    const badge = document.querySelector('.threat-badge');
+    const nameElement = document.getElementById('ship-name');
+    const descElement = document.getElementById('ship-desc');
 
-            // Change threat badge for final bosses
-            const badge = document.querySelector('.threat-badge');
-            if(name.includes("General Pepper")) {
-                badge.innerText = "THREAT LEVEL: CATEGORY-X";
-                badge.style.color = "#ff4d4d";
-                badge.style.borderColor = "#ff4d4d";
-            } else {
-                badge.innerText = "THREAT LEVEL: CRITICAL";
-                badge.style.color = "#f1c40f";
-                badge.style.borderColor = "#f1c40f";
-            }
-        }
+    // 1. Update Model and Text
+    viewer.src = `talan_bosses/${fileName}`;
+    nameElement.innerText = name;
+    descElement.innerText = desc;
+    
+    // 2. Handle UI Active State (Fixed 'event' reference)
+    document.querySelectorAll('.ship-btn').forEach(btn => btn.classList.remove('active'));
+    if (window.event) {
+        window.event.currentTarget.classList.add('active');
+    }
+
+    // 3. Logic for Sauria Threat Levels
+    // Using a switch makes it easier to add "Category-X" bosses later
+    switch (name) {
+        case "GENERAL PEPPER":
+        case "COLONEL SHEARS":
+            badge.innerText = "THREAT LEVEL: CATEGORY-X";
+            badge.style.color = "#ff4d4d"; // Aggressive Red
+            badge.style.borderColor = "#ff4d4d";
+            break;
+        
+        default:
+            badge.innerText = "THREAT LEVEL: CRITICAL";
+            badge.style.color = "#2ecc71"; // Sauria Green
+            badge.style.borderColor = "#2ecc71";
+            break;
+    }
+}
     </script>
 
 </body>
