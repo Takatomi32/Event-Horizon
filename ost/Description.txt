@@ -1,0 +1,3 @@
+The structure of the OST will be like this:
+
+ost -> [campaigns] -> [levels], [bosses] -> individual music
