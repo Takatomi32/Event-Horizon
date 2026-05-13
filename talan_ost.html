@@ -24,8 +24,8 @@
   <h3>Level 1 — Talan Spaceport</h3>
 
   <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/TalanPort_ThemeA.mp3', 'Level 1 — Intro')">
-    Spaceport Theme
-  </div>
+  Spaceport Theme
+</div>
 
   <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Miyu_ThemeA.mp3', 'Level 1 — Miyu Theme')">
     Miyu Theme
@@ -88,24 +88,24 @@
   const nowPlaying = document.getElementById("nowPlaying");
 
   function playTrack(src, title) {
-    player.src = src;
-    player.muted = true;
-    player.volume = 0;
-    player.play();
+  player.src = src;
+  player.muted = true;
+  player.volume = 0;
+  player.play();
 
-    nowPlaying.textContent = "Now Playing: " + title;
+  nowPlaying.textContent = "Now Playing: " + title;
 
-    let volume = 100;
-    const fade = setInterval(() => {
-      volume += 0.02;
-      player.volume = volume;
+  let volume = 0;
+  const fade = setInterval(() => {
+    volume += 0.02;
+    player.volume = volume;
 
-      if (volume >= 1) {
-        player.muted = false;
-        clearInterval(fade);
-      }
-    }, 100);
-  }
+    if (volume >= 1) {
+      player.muted = false;
+      clearInterval(fade);
+    }
+  }, 100);
+}
 </script>
 
 </body>
