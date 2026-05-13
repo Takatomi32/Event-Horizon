@@ -67,11 +67,12 @@
   </div>
 
   <script>
-    function openCampaign(id) {
-      // Later this will load the OST list for that campaign
-      console.log("Selected:", id);
+  function openCampaign(id) {
+    if (id === "second_lylat_war") {
+      window.location.href = "lylat_ost.html";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
