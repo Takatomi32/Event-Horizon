@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Lylat War — OST</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="second_lylat_war.css">
+</head>
+
+<body>
+
+<h1>SECOND LYLAT WAR — OST</h1>
+<p class="hint">Click a track to play it (audio fades in)</p>
+
+<div class="section">
+  <h2>Level Themes</h2>
+
+  <!-- LEVEL 1 -->
+  <h3>Level 1 — Corneria Orbit</h3>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_1/intro.mp3', 'Level 1 — Intro')">
+    Intro Theme
+  </div>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_1/combat.mp3', 'Level 1 — Combat')">
+    Combat Theme
+  </div>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_1/escape.mp3', 'Level 1 — Escape')">
+    Escape Theme
+  </div>
+
+  <!-- LEVEL 2 -->
+  <h3>Level 2 — Corneria City</h3>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_2/ambient.mp3', 'Level 2 — Ambient')">
+    Ambient Theme
+  </div>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_2/chase.mp3', 'Level 2 — Chase')">
+    Chase Theme
+  </div>
+
+  <!-- LEVEL 3 -->
+  <h3>Level 3 — Meteo</h3>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_3/approach.mp3', 'Level 3 — Approach')">
+    Approach Theme
+  </div>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_3/battle.mp3', 'Level 3 — Battle')">
+    Battle Theme
+  </div>
+</div>
+
+
+<div class="section">
+  <h2>Boss Themes</h2>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_1.mp3', 'Boss 1 — Iron Colossus')">
+    Boss 1
+  </div>
+
+  <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
+    Boss 2
+  </div>
+
+   <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
+    Boss 3
+  </div>
+
+   <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
+    Boss 4
+  </div>
+
+   <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
+    Boss 5
+  </div>
+</div>
+
+<div class="back" onclick="window.location.href='../index.html'">
+  ⬅ RETURN TO RECORDS
+</div>
+
+<script>
+  const player = document.getElementById("player");
+  const nowPlaying = document.getElementById("nowPlaying");
+
+  function playTrack(src, title) {
+    player.src = src;
+    player.muted = true;
+    player.volume = 0;
+    player.play();
+
+    nowPlaying.textContent = "Now Playing: " + title;
+
+    let volume = 0;
+    const fade = setInterval(() => {
+      volume += 0.02;
+      player.volume = volume;
+
+      if (volume >= 1) {
+        player.muted = false;
+        clearInterval(fade);
+      }
+    }, 100);
+  }
+</script>
+
+</body>
+</html>
