@@ -86,27 +86,30 @@
 
 <script>
   const player = document.getElementById("player");
-  const nowPlaying = document.getElementById("nowPlaying");
+const nowPlaying = document.getElementById("nowPlaying");
 
   function playTrack(src, title) {
     player.src = src;
-    player.muted = true;
+  nowPlaying.textContent = "Now Playing: " + title;
+
     player.volume = 0;
-    player.play();
+  player.muted = false;
 
-    nowPlaying.textContent = "Now Playing: " + title;
-
-    let volume = 0;
+    player.play().then(() => {
+      let currentVol = 0;
     const fade = setInterval(() => {
-      volume += 0.02;
-      player.volume = volume;
-
-      if (volume >= 1) {
-        player.muted = false;
+      if (currentVol < 1) {
+        currentVol += 0.05;
+        if (currentVol > 1) currentVol = 1;
+        player.volume = currentVol;
+      } else {
         clearInterval(fade);
       }
-    }, 100);
-  }
+    }, 50);
+  }).catch(error => {
+    console.error("Playback failed. This usually happens if the user hasn't clicked anything yet:", error);
+  });
+}
 </script>
 
 </body>
