@@ -84,19 +84,23 @@
   ⬅ RETURN TO RECORDS
 </div>
 
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
 <script>
-  const player = document.getElementById("player");
+ const player = document.getElementById("player");
 const nowPlaying = document.getElementById("nowPlaying");
 
-  function playTrack(src, title) {
-    player.src = src;
+function playTrack(src, title) {
+
+player.src = src;
   nowPlaying.textContent = "Now Playing: " + title;
 
-    player.volume = 0;
+  player.volume = 0;
   player.muted = false;
 
-    player.play().then(() => {
-      let currentVol = 0;
+  player.play().then(() => {
+    let currentVol = 0;
     const fade = setInterval(() => {
       if (currentVol < 1) {
         currentVol += 0.05;
@@ -110,7 +114,7 @@ const nowPlaying = document.getElementById("nowPlaying");
     console.error("Playback failed. This usually happens if the user hasn't clicked anything yet:", error);
   });
 }
+  
 </script>
-
 </body>
 </html>
