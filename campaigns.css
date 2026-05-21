@@ -1,0 +1,57 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.hint {
+  text-align: center;
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+
+/* ===== CAMPAIGN LIST CONTAINER ===== */
+
+.campaigns-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+
+/* ===== CAMPAIGN CARD ===== */
+
+.campaign-card {
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.campaign-card:hover {
+  background: #111;
+  border-color: #555;
+}
+
+.campaign-card h2 {
+  margin: 0 0 10px 0;
+  color: #7fc5ff;
+  letter-spacing: 2px;
+}
+
+.campaign-description {
+  opacity: 0.85;
+  line-height: 1.5;
+  margin: 0;
+}
