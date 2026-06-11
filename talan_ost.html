@@ -16,6 +16,22 @@
 
 <!-- AUDIO PLAYER + NOW PLAYING -->
 <audio id="player" autoplay loop muted></audio>
+
+  <div class="audio-controls">
+  <button class="audio-btn" onclick="playCurrent()">▶ PLAY</button>
+  <button class="audio-btn" onclick="pauseTrack()">⏸ PAUSE</button>
+  <button class="audio-btn" onclick="stopTrack()">⏹ STOP</button>
+
+  <div class="progress-container" onclick="seekTrack(event)">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="time-display">
+    <span id="currentTime">00:00</span> /
+    <span id="duration">00:00</span>
+  </div>
+</div>
+  
 <div id="nowPlaying" class="now-playing"></div>
 
 <!-- ========================= -->
@@ -25,47 +41,47 @@
   <h2>Level Themes</h2>
 
   <!-- LEVEL 1 -->
-  <h3>Level 1 — Talan Spaceport</h3>
+  <h3>Talan Spaceport</h3>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/TalanPort_ThemeA.mp3', 'Level 1 — Spaceport Theme')">
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/TalanPort_ThemeA.mp3', 'Spaceport Theme')">
     Spaceport Theme
   </div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Miyu_ThemeA.mp3', 'Level 1 — Miyu Theme')">
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Miyu_ThemeA.mp3', 'Miyu Theme')">
     Miyu Theme
   </div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Fay_ThemeA.mp3', 'Level 1 — Fay Theme')">
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Fay_ThemeA.mp3', 'Fay Theme')">
     Fay Theme
   </div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Starfox_Theme.mp3', 'Level 1 — StarFox Theme')">
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Starfox_Theme.mp3', 'StarFox Theme')">
     StarFox Theme
   </div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/SF2_LovelyA.mp3', 'Level 1 — Ending')">
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/SF2_LovelyA.mp3', 'Ending')">
     Ending
   </div>
 
   <!-- LEVEL 2 -->
-  <h3>Level 2 — Cuthbert Comet</h3>
+  <h3>Cuthbert Comet</h3>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_1.mp3', 'Level 2 — Ambient Theme 1')">
+  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_1.mp3', 'Cuthbert Comet Ambient Theme 1')">
     Ambient Theme 1
   </div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_2.mp3', 'Level 2 — Ambient Theme 2')">
+  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_2.mp3', 'Cuthbert Comet Ambient Theme 2')">
     Ambient Theme 2
   </div>
 
   <!-- LEVEL 3 -->
-  <h3>Level 3 — Sigma Pulsar</h3>
+  <h3>Sigma Pulsar</h3>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_1.mp3', 'Level 3 — Ambient Theme 1')">
+  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_1.mp3', 'Sigma Pulsar Ambient Theme 1')">
     Ambient Theme 1
   </div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_2.mp3', 'Level 3 — Ambient Theme 2')">
+  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_2.mp3', 'Sigma Pulsar Ambient Theme 2')">
     Ambient Theme 2
   </div>
 
@@ -101,30 +117,64 @@
  const player = document.getElementById("player");
 const nowPlaying = document.getElementById("nowPlaying");
 
-function playTrack(src, title) {
+let currentTrack = "";
 
-player.src = src;
+/* PLAY TRACK WITH FADE-IN */
+function playTrack(src, title) {
+  player.src = src;
+  currentTrack = src;
   nowPlaying.textContent = "Now Playing: " + title;
 
   player.volume = 0;
-  player.muted = false;
+  player.play();
 
-  player.play().then(() => {
-    let currentVol = 0;
-    const fade = setInterval(() => {
-      if (currentVol < 1) {
-        currentVol += 0.05;
-        if (currentVol > 1) currentVol = 1;
-        player.volume = currentVol;
-      } else {
-        clearInterval(fade);
-      }
-    }, 50);
-  }).catch(error => {
-    console.error("Playback failed. This usually happens if the user hasn't clicked anything yet:", error);
-  });
+  let vol = 0;
+  const fade = setInterval(() => {
+    vol += 0.05;
+    if (vol >= 1) {
+      vol = 1;
+      clearInterval(fade);
+    }
+    player.volume = vol;
+  }, 50);
 }
-  
+
+/* BUTTON CONTROLS */
+function playCurrent() {
+  if (currentTrack !== "") player.play();
+}
+
+function pauseTrack() {
+  player.pause();
+}
+
+function stopTrack() {
+  player.pause();
+  player.currentTime = 0;
+}
+
+/* PROGRESS BAR + TIME */
+player.addEventListener("timeupdate", () => {
+  const progress = (player.currentTime / player.duration) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
+
+  document.getElementById("currentTime").textContent = formatTime(player.currentTime);
+  document.getElementById("duration").textContent = formatTime(player.duration);
+});
+
+function seekTrack(event) {
+  const rect = event.target.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const percent = x / rect.width;
+  player.currentTime = percent * player.duration;
+}
+
+function formatTime(sec) {
+  if (isNaN(sec)) return "00:00";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+}
 </script>
 
 </body>
