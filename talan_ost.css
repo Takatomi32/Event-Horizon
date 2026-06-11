@@ -75,3 +75,61 @@ h3 {
   opacity: 1;
   text-shadow: 0 0 10px #4fc3ff;
 }
+
+.audio-controls {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid #1f4d6b;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.25);
+}
+
+.audio-btn {
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 8px 14px;
+  margin-right: 10px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #1f4d6b;
+  color: #9fd8ff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.audio-btn:hover {
+  border-color: #4db8ff;
+  color: #c8ecff;
+  box-shadow: 0 0 12px rgba(0, 170, 255, 0.45);
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #111;
+  border: 1px solid #1f4d6b;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4db8ff;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.45);
+  border-radius: 5px;
+}
+
+.time-display {
+  margin-top: 10px;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #7fc5ff;
+}
