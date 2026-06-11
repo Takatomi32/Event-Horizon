@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talan Incident — OST</title>
 
-  <!-- Link to external CSS -->
   <link rel="stylesheet" href="talan_ost.css">
 </head>
 
 <body>
 
 <h1>TALAN INCIDENT — OST</h1>
-<p class="hint">Click a track to play it</p>
+<p class="hint">Click a track to play it (audio fades in)</p>
 
-<!-- AUDIO PLAYER + NOW PLAYING -->
-<audio id="player" autoplay loop muted></audio>
+<!-- ========================= -->
+<!-- AUDIO PLAYER -->
+<!-- ========================= -->
 
-  <div class="audio-controls">
+<audio id="player"></audio>
+
+<!-- AUDIO CONTROLS -->
+<div class="audio-controls">
   <button class="audio-btn" onclick="playCurrent()">▶ PLAY</button>
   <button class="audio-btn" onclick="pauseTrack()">⏸ PAUSE</button>
   <button class="audio-btn" onclick="stopTrack()">⏹ STOP</button>
@@ -31,90 +34,54 @@
     <span id="duration">00:00</span>
   </div>
 </div>
-  
+
 <div id="nowPlaying" class="now-playing"></div>
 
 <!-- ========================= -->
 <!-- LEVEL THEMES SECTION -->
 <!-- ========================= -->
+
 <div class="section">
   <h2>Level Themes</h2>
 
-  <!-- LEVEL 1 -->
   <h3>Talan Spaceport</h3>
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/TalanPort_ThemeA.mp3', 'Spaceport Theme')">Spaceport Theme</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Miyu_ThemeA.mp3', 'Miyu Theme')">Miyu Theme</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Fay_ThemeA.mp3', 'Fay Theme')">Fay Theme</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Starfox_Theme.mp3', 'StarFox Theme')">StarFox Theme</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/SF2_LovelyA.mp3', 'Ending')">Ending</div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/TalanPort_ThemeA.mp3', 'Spaceport Theme')">
-    Spaceport Theme
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Miyu_ThemeA.mp3', 'Miyu Theme')">
-    Miyu Theme
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Fay_ThemeA.mp3', 'Fay Theme')">
-    Fay Theme
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/Starfox_Theme.mp3', 'StarFox Theme')">
-    StarFox Theme
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/talan_spaceport/SF2_LovelyA.mp3', 'Ending')">
-    Ending
-  </div>
-
-  <!-- LEVEL 2 -->
   <h3>Cuthbert Comet</h3>
+  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_1.mp3', 'Cuthbert Comet Ambient Theme 1')">Ambient Theme 1</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_2.mp3', 'Cuthbert Comet Ambient Theme 2')">Ambient Theme 2</div>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_1.mp3', 'Cuthbert Comet Ambient Theme 1')">
-    Ambient Theme 1
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/cuthbert_comet/music_2.mp3', 'Cuthbert Comet Ambient Theme 2')">
-    Ambient Theme 2
-  </div>
-
-  <!-- LEVEL 3 -->
   <h3>Sigma Pulsar</h3>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_1.mp3', 'Sigma Pulsar Ambient Theme 1')">
-    Ambient Theme 1
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_2.mp3', 'Sigma Pulsar Ambient Theme 2')">
-    Ambient Theme 2
-  </div>
-
-</div> <!-- END LEVEL THEMES SECTION -->
-
+  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_1.mp3', 'Sigma Pulsar Ambient Theme 1')">Ambient Theme 1</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/sigma_pulsar/ambience_2.mp3', 'Sigma Pulsar Ambient Theme 2')">Ambient Theme 2</div>
+</div>
 
 <!-- ========================= -->
 <!-- BOSS THEMES SECTION -->
 <!-- ========================= -->
+
 <div class="section">
   <h2>Boss Themes</h2>
 
-  <div class="track" onclick="playTrack('ost/talan_incident/boss_themes/boss_1.mp3', 'Boss 1')">
-    Boss 1
-  </div>
-
-  <div class="track" onclick="playTrack('ost/talan_incident/boss_themes/boss_2.mp3', 'Boss 2')">
-    Boss 2
-  </div>
+  <div class="track" onclick="playTrack('ost/talan_incident/boss_themes/boss_1.mp3', 'Boss 1')">Boss 1</div>
+  <div class="track" onclick="playTrack('ost/talan_incident/boss_themes/boss_2.mp3', 'Boss 2')">Boss 2</div>
 </div>
-
 
 <!-- BACK BUTTON -->
 <div class="back" onclick="window.location.href='../index.html'">
   ⬅ RETURN TO RECORDS
 </div>
 
-
 <!-- ========================= -->
 <!-- JAVASCRIPT -->
 <!-- ========================= -->
+
 <script>
- const player = document.getElementById("player");
+const player = document.getElementById("player");
 const nowPlaying = document.getElementById("nowPlaying");
 
 let currentTrack = "";
