@@ -3,110 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sauria Crisis — OST</title>
+  <title>Talan Incident — OST</title>
 
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="sauria_ost.css">
+  <link rel="stylesheet" href="talan_ost.css">
 </head>
 
 <body>
 
-<h1>Sauria Crisis — OST</h1>
-<p class="hint">Click a track to play it</p>
+<h1>TALAN INCIDENT — OST</h1>
+<p class="hint">Click a track to play it (audio fades in)</p>
+
+<!-- ========================= -->
+<!-- AUDIO PLAYER -->
+<!-- ========================= -->
+
+<audio id="player"></audio>
+
+<!-- AUDIO CONTROLS -->
+<div class="audio-controls">
+  <button class="audio-btn" onclick="playCurrent()">▶ PLAY</button>
+  <button class="audio-btn" onclick="pauseTrack()">⏸ PAUSE</button>
+  <button class="audio-btn" onclick="stopTrack()">⏹ STOP</button>
+
+  <div class="progress-container" onclick="seekTrack(event)">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="time-display">
+    <span id="currentTime">00:00</span> /
+    <span id="duration">00:00</span>
+  </div>
+</div>
+
+<div id="nowPlaying" class="now-playing"></div>
+
+<!-- ========================= -->
+<!-- LEVEL THEMES SECTION -->
+<!-- ========================= -->
 
 <div class="section">
   <h2>Level Themes</h2>
 
-  <!-- LEVEL 1 -->
-  <h3>Level 1 — Yume Moon</h3>
-
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_1/intro.mp3', 'Level 1 — Intro')">
-    Intro Theme
+ <h3>Yume Moon</h3>
+  <div class="track" onclick="playTrack('ost/sauria_crisis/yume_moon/begin_mission.ogg', 'Star Fox Begin Mission')">
+    Begin Mission
   </div>
 
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_1/combat.mp3', 'Level 1 — Combat')">
-    Combat Theme
+  <div class="track" onclick="playTrack('ost/sauria_crisis/yume_moon/rescue.ogg', 'Star Fox Rescue')">
+    Rescue
   </div>
 
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_1/escape.mp3', 'Level 1 — Escape')">
-    Escape Theme
+  <div class="track" onclick="playTrack('ost/sauria_crisis/yume_moon/rescue_short.ogg', 'Star Fox Rescue Short')">
+    Rescue Short
   </div>
 
-  <!-- LEVEL 2 -->
-  <h3>Level 2 — Warlock Mountain</h3>
-
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_2/ambient.mp3', 'Level 2 — Ambient')">
-    Ambient Theme
-  </div>
-
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_2/chase.mp3', 'Level 2 — Chase')">
-    Chase Theme
-  </div>
-
-  <!-- LEVEL 3 -->
-  <h3>Level 3 — Golden Plains</h3>
-
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_3/approach.mp3', 'Level 3 — Approach')">
-    Approach Theme
-  </div>
-
-  <div class="track" onclick="playTrack('ost/second_lylat_war/levels/level_3/battle.mp3', 'Level 3 — Battle')">
-    Battle Theme
+  <div class="track" onclick="playTrack('ost/sauria_crisis/yume_moon/marching.ogg', 'Star Fox Marching')">
+    Marching
   </div>
 </div>
 
+<!-- ========================= -->
+<!-- BOSS THEMES SECTION -->
+<!-- ========================= -->
 
 <div class="section">
   <h2>Boss Themes</h2>
 
-  <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_1.mp3', 'Boss 1 — Iron Colossus')">
-    Boss 1
-  </div>
 
-  <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
-    Boss 2
-  </div>
-
-   <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
-    Boss 3
-  </div>
-
-   <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
-    Boss 4
-  </div>
-
-   <div class="track" onclick="playTrack('ost/second_lylat_war/bosses/boss_2.mp3', 'Boss 2 — Eclipse Serpent')">
-    Boss 5
-  </div>
 </div>
 
-<div class="back" onclick="window.location.href='ost.html'">
+<!-- BACK BUTTON -->
+<div class="back" onclick="window.location.href='../index.html'">
   ⬅ RETURN TO RECORDS
 </div>
 
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
 <script>
-  const player = document.getElementById("player");
-  const nowPlaying = document.getElementById("nowPlaying");
+const player = document.getElementById("player");
+const nowPlaying = document.getElementById("nowPlaying");
 
-  function playTrack(src, title) {
-    player.src = src;
-    player.muted = true;
-    player.volume = 0;
-    player.play();
+let currentTrack = "";
 
-    nowPlaying.textContent = "Now Playing: " + title;
+/* PLAY TRACK WITH FADE-IN */
+function playTrack(src, title) {
+  player.src = src;
+  currentTrack = src;
+  nowPlaying.textContent = "Now Playing: " + title;
 
-    let volume = 0;
-    const fade = setInterval(() => {
-      volume += 0.02;
-      player.volume = volume;
+  player.volume = 0;
+  player.play();
 
-      if (volume >= 1) {
-        player.muted = false;
-        clearInterval(fade);
-      }
-    }, 100);
-  }
+  let vol = 0;
+  const fade = setInterval(() => {
+    vol += 0.05;
+    if (vol >= 1) {
+      vol = 1;
+      clearInterval(fade);
+    }
+    player.volume = vol;
+  }, 50);
+}
+
+/* BUTTON CONTROLS */
+function playCurrent() {
+  if (currentTrack !== "") player.play();
+}
+
+function pauseTrack() {
+  player.pause();
+}
+
+function stopTrack() {
+  player.pause();
+  player.currentTime = 0;
+}
+
+/* PROGRESS BAR + TIME */
+player.addEventListener("timeupdate", () => {
+  const progress = (player.currentTime / player.duration) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
+
+  document.getElementById("currentTime").textContent = formatTime(player.currentTime);
+  document.getElementById("duration").textContent = formatTime(player.duration);
+});
+
+function seekTrack(event) {
+  const rect = event.target.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const percent = x / rect.width;
+  player.currentTime = percent * player.duration;
+}
+
+function formatTime(sec) {
+  if (isNaN(sec)) return "00:00";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+}
 </script>
 
 </body>
