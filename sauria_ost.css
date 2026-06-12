@@ -1,0 +1,135 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.hint {
+  text-align: center;
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #0a0a0a;
+}
+
+.section h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #7fc5ff;
+  letter-spacing: 2px;
+}
+
+h3 {
+  margin-top: 25px;
+  color: #ffdd7f;
+  letter-spacing: 1px;
+}
+
+.track {
+  margin: 10px 0;
+  padding: 12px;
+  background: #111;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid #222;
+  letter-spacing: 1px;
+}
+
+.track:hover {
+  background: #1c1c1c;
+  border-color: #444;
+}
+
+.now-playing {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.back {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back:hover {
+  opacity: 1;
+  text-shadow: 0 0 10px #4fc3ff;
+}
+
+.audio-controls {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid #1f4d6b;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.25);
+}
+
+.audio-btn {
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 8px 14px;
+  margin-right: 10px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #1f4d6b;
+  color: #9fd8ff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.audio-btn:hover {
+  border-color: #4db8ff;
+  color: #c8ecff;
+  box-shadow: 0 0 12px rgba(0, 170, 255, 0.45);
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #111;
+  border: 1px solid #1f4d6b;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4db8ff;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.45);
+  border-radius: 5px;
+}
+
+.time-display {
+  margin-top: 10px;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #7fc5ff;
+}
