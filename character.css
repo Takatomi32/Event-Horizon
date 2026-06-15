@@ -1,0 +1,153 @@
+:root {
+    --accent: #3498db;
+    --venom-red: #e74c3c;
+    --text-light: #f5f6fa;
+    --text-dim: #bdc3c7;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Page Title */
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+/* Campaign Title */
+.campaign-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+/* Team Headings */
+.team-heading {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 40px 0 20px 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.team-heading::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    margin-left: 20px;
+}
+
+.team-heading.v-red { color: var(--venom-red); }
+.team-heading.v-red::after { background: linear-gradient(to right, var(--venom-red), transparent); }
+
+.team-heading.v-green { color: #2ecc71; }
+.team-heading.v-green::after { background: linear-gradient(to right, #2ecc71, transparent); }
+
+/* =============================== */
+/*   NEW SINGLE-ROW CHARACTER CARD */
+/* =============================== */
+
+.character-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.char-card {
+    display: flex;
+    gap: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    transition: 0.3s ease;
+}
+
+.char-card:hover {
+    background: rgba(52, 152, 219, 0.05);
+    border-color: var(--accent);
+}
+
+.char-card.venomian:hover {
+    background: rgba(231, 76, 60, 0.05);
+    border-color: var(--venom-red);
+}
+
+/* Portrait Window */
+.comms-window {
+    width: 180px;
+    min-width: 180px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+}
+
+.portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Scanline Overlay */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
+}
+
+/* Character Info */
+.char-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.char-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
+.rank {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.char-card.venomian .rank {
+    color: var(--venom-red);
+}
+
+.char-bio {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
