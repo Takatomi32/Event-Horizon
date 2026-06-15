@@ -1,111 +1,185 @@
+/* =============================== */
+/*   GLOBAL THEME                  */
+/* =============================== */
+
 :root {
-    --accent: #3498db;
-    --venom-red: #e74c3c;
     --text-light: #f5f6fa;
     --text-dim: #bdc3c7;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(10, 12, 18, 0.7);
+    --card-border: rgba(255, 255, 255, 0.12);
 }
 
-/* Page Title */
+/* Background */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-light);
+    background:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        #05070a;
+    background-size: 40px 40px;
+}
+
+/* Layout container */
+.main-container {
+    max-width: 1100px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+/* =============================== */
+/*   NAVBAR                        */
+/* =============================== */
+
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: 0.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+}
+
+.dl-btn a {
+    color: #9b59b6 !important;
+    border: 1px solid #9b59b6;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+/* =============================== */
+/*   PAGE TITLES                   */
+/* =============================== */
+
 .page-title {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent);
+    font-family: "Orbitron", system-ui, sans-serif;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 10px;
+    margin: 40px 0 5px;
 }
 
-/* Campaign Title */
-.campaign-title {
+.campaign-subtitle {
     text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.6rem;
-    color: var(--text-light);
+    font-size: 0.95rem;
     letter-spacing: 3px;
-    margin-bottom: 40px;
-    opacity: 0.85;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 35px;
 }
 
-/* Team Headings */
-.team-heading {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent);
+/* =============================== */
+/*   CAMPAIGN COLOR THEMES         */
+/* =============================== */
+
+/* Second Lylat War (Blue) */
+.campaign-blue {
+    --campaign-color: #3498db;
+}
+
+/* Sauria Crisis (Yellow) */
+.campaign-yellow {
+    --campaign-color: #f1c40f;
+}
+
+/* Talan Incident (Green) */
+.campaign-green {
+    --campaign-color: #2ecc71;
+}
+
+/* Campaign heading */
+.campaign-heading {
+    font-family: "Orbitron", system-ui, sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin: 40px 0 20px 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin: 40px 0 18px;
     display: flex;
     align-items: center;
+    color: var(--campaign-color);
 }
 
-.team-heading::after {
+.campaign-heading::after {
     content: "";
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, var(--accent), transparent);
-    margin-left: 20px;
+    background: linear-gradient(to right, var(--campaign-color), transparent);
+    margin-left: 18px;
 }
 
-.team-heading.v-red { color: var(--venom-red); }
-.team-heading.v-red::after { background: linear-gradient(to right, var(--venom-red), transparent); }
-
-.team-heading.v-green { color: #2ecc71; }
-.team-heading.v-green::after { background: linear-gradient(to right, #2ecc71, transparent); }
-
 /* =============================== */
-/*   NEW SINGLE-ROW CHARACTER CARD */
+/*   CHARACTER LIST                */
 /* =============================== */
 
-.character-grid {
+.character-section {
+    margin-bottom: 40px;
+}
+
+.character-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin-bottom: 60px;
+    gap: 22px;
 }
 
+/* Character card */
 .char-card {
     display: flex;
-    gap: 25px;
-    background: rgba(10, 12, 18, 0.7);
-    border: 1px solid rgba(52, 152, 219, 0.25);
-    border-left: 4px solid var(--accent);
-    padding: 25px;
-    transition: 0.25s ease;
-    backdrop-filter: blur(4px);
+    gap: 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--campaign-color, #3498db);
+    padding: 20px;
     position: relative;
     overflow: hidden;
+    transition: 0.25s ease;
+    backdrop-filter: blur(4px);
 }
 
 .char-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 18px rgba(52, 152, 219, 0.4);
-    transform: translateX(4px);
+    border-color: var(--campaign-color, #3498db);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7),
+                0 0 18px var(--campaign-color, #3498db);
+    transform: translateX(3px);
 }
 
-/* Venomian variant */
-.char-card.venomian {
-    border-left: 4px solid var(--venom-red);
-}
-
-.char-card.venomian:hover {
-    border-color: var(--venom-red);
-    box-shadow: 0 0 18px rgba(231, 76, 60, 0.4);
-}
-
-/* Portrait Window */
+/* Portrait window */
 .comms-window {
-    width: 190px;
-    min-width: 190px;
-    height: 190px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 0, 0, 0.4);
+    width: 180px;
+    min-width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
-    box-shadow: inset 0 0 12px rgba(52, 152, 219, 0.25);
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.08);
 }
 
 .portrait {
@@ -114,24 +188,22 @@
     object-fit: cover;
 }
 
-/* Scanline Overlay */
+/* Scanline overlay */
 .scanline {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: repeating-linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.05) 0px,
-        rgba(255, 255, 255, 0.05) 1px,
+        rgba(255, 255, 255, 0.04) 0px,
+        rgba(255, 255, 255, 0.04) 1px,
         transparent 2px,
         transparent 4px
     );
     pointer-events: none;
+    opacity: 0.4;
 }
 
-/* Character Info */
+/* Character info */
 .char-info {
     flex: 1;
     display: flex;
@@ -140,135 +212,25 @@
 }
 
 .char-header h3 {
-    font-family: 'Orbitron', sans-serif;
     margin: 0;
-    font-size: 1.4rem;
-    color: var(--text-light);
+    font-family: "Orbitron", system-ui, sans-serif;
+    font-size: 1.25rem;
     letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
 }
 
 .rank {
+    margin-top: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: var(--accent);
     letter-spacing: 2px;
-    font-weight: bold;
-    margin-top: 4px;
+    color: var(--campaign-color, #3498db);
     opacity: 0.9;
 }
 
-.char-card.venomian .rank {
-    color: var(--venom-red);
-}
-
 .char-bio {
-    margin-top: 15px;
-    font-size: 1rem;
+    margin-top: 12px;
+    font-size: 0.95rem;
     color: var(--text-dim);
     line-height: 1.7;
-    max-width: 700px;
-}
-
-/* Scanline animation */
-.char-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.02) 0px,
-        rgba(255, 255, 255, 0.02) 1px,
-        transparent 2px,
-        transparent 4px
-    );
-    pointer-events: none;
-    animation: scan 6s linear infinite;
-    opacity: 0.3;
-}
-
-@keyframes scan {
-    0% { transform: translateY(-10px); }
-    100% { transform: translateY(10px); }
-}
-
-/* Background */
-body {
-    background:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-        #05070a;
-    background-size: 40px 40px;
-}
-
-/* FIXED NAVBAR SELECTOR */
-.navbar {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #888;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent);
-}
-
-.dl-btn a {
-    color: #9b59b6 !important;
-    border: 1px solid #9b59b6;
-    padding: 5px 15px;
-    border-radius: 4px;
-}
-
-/* =============================== */
-/*   SAURIA CRISIS COLOR THEME     */
-/* =============================== */
-
-.sauria-accent {
-    --accent: #f1c40f; /* Gold-yellow */
-}
-
-.char-card.sauria {
-    border-left: 4px solid #f1c40f;
-    border-color: rgba(241, 196, 15, 0.25);
-}
-
-.char-card.sauria:hover {
-    border-color: #f1c40f;
-    box-shadow: 0 0 18px rgba(241, 196, 15, 0.4);
-}
-
-.team-heading.sauria {
-    color: #f1c40f;
-}
-
-.team-heading.sauria::after {
-    background: linear-gradient(to right, #f1c40f, transparent);
+    max-width: 720px;
 }
