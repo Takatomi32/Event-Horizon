@@ -246,3 +246,29 @@ body {
     padding: 5px 15px;
     border-radius: 4px;
 }
+
+/* =============================== */
+/*   SAURIA CRISIS COLOR THEME     */
+/* =============================== */
+
+.sauria-accent {
+    --accent: #f1c40f; /* Gold-yellow */
+}
+
+.char-card.sauria {
+    border-left: 4px solid #f1c40f;
+    border-color: rgba(241, 196, 15, 0.25);
+}
+
+.char-card.sauria:hover {
+    border-color: #f1c40f;
+    box-shadow: 0 0 18px rgba(241, 196, 15, 0.4);
+}
+
+.team-heading.sauria {
+    color: #f1c40f;
+}
+
+.team-heading.sauria::after {
+    background: linear-gradient(to right, #f1c40f, transparent);
+}
