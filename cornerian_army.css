@@ -1,25 +1,71 @@
+/* ========================================================= */
+/*   GLOBAL THEME                                             */
+/* ========================================================= */
+
 :root {
-    --accent: #3498db; /* Default Star Fox blue */
+    --accent: #2ecc71; /* CORNERIAN GREEN */
     --text-light: #ffffff;
     --text-dim: #888;
 }
 
-.fleet-page {
+body {
     margin: 0;
-    overflow: hidden;
-    height: 100vh;
-    background: #000;
     font-family: 'Rajdhani', sans-serif;
 }
 
 /* ========================================================= */
-/*   LAYOUT                                                   */
+/*   NAVBAR                                                   */
 /* ========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a,
+.active-fleet {
+    color: #888;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.active-fleet {
+    color: #fff;
+}
+
+/* ========================================================= */
+/*   PAGE LAYOUT                                              */
+/* ========================================================= */
+
+.fleet-page {
+    background: #000;
+    min-height: 100vh;
+}
 
 .fleet-layout {
     display: flex;
-    height: 100vh;
-    padding-top: 70px; /* Navbar spacing */
+    height: calc(100vh - 70px);
+    padding-top: 70px;
 }
 
 /* ========================================================= */
@@ -28,12 +74,11 @@
 
 .ship-sidebar {
     width: 380px;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0,0,0,0.92);
     border-right: 3px solid var(--accent);
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    z-index: 10;
     overflow-y: auto;
 }
 
@@ -52,8 +97,8 @@
 /* ========================================================= */
 
 .ship-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
     color: var(--text-dim);
     padding: 18px 16px;
     margin-bottom: 10px;
@@ -70,16 +115,16 @@
 }
 
 .ship-btn:hover {
-    background: rgba(52, 152, 219, 0.15);
+    background: rgba(46,204,113,0.15);
     border-color: var(--accent);
     color: var(--text-light);
 }
 
 .ship-btn.active {
-    background: rgba(52, 152, 219, 0.25);
+    background: rgba(46,204,113,0.25);
     border-color: var(--accent);
     color: var(--text-light);
-    box-shadow: 0 0 12px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 0 12px rgba(46,204,113,0.3);
 }
 
 /* ========================================================= */
@@ -103,11 +148,10 @@
     width: 100%;
     height: 100%;
     outline: none;
-    --poster-color: transparent;
 }
 
 /* ========================================================= */
-/*   SHIP DESCRIPTION BOX                                     */
+/*   DESCRIPTION BOX                                          */
 /* ========================================================= */
 
 .ship-description-box {
@@ -116,6 +160,7 @@
     right: 60px;
     text-align: right;
     pointer-events: none;
+    z-index: 20;
 }
 
 .ship-description-box h1 {
