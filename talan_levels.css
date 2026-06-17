@@ -1,0 +1,112 @@
+body {
+  background: #000;
+  color: #e6f1ff;
+  font-family: "Orbitron", Arial, sans-serif;
+  padding: 40px;
+  margin: 0;
+
+  /* Subtle animated grid background */
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  font-size: 32px;
+  color: #7fc5ff;
+  text-shadow: 0 0 10px #1a6fa8;
+}
+
+.hint {
+  text-align: center;
+  opacity: 0.6;
+  margin-bottom: 30px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+
+/* ===== LEVEL CARD CONTAINER ===== */
+
+.levels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+
+/* ===== LEVEL CARD (TECH PANEL STYLE) ===== */
+
+.level-card {
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid #1f4d6b;
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+
+  /* Glow + holographic edge */
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.25);
+
+  /* Subtle scanline overlay */
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  transition: 0.25s ease;
+}
+
+.level-card:hover {
+  border-color: #4db8ff;
+  box-shadow: 0 0 18px rgba(0, 170, 255, 0.45);
+  transform: translateY(-3px);
+}
+
+
+/* ===== LEVEL HEADER ===== */
+
+.level-card h2 {
+  margin: 0 0 15px 0;
+  color: #9fd8ff;
+  letter-spacing: 3px;
+  font-size: 22px;
+  text-shadow: 0 0 8px #1a6fa8;
+  border-left: 4px solid #4db8ff;
+  padding-left: 10px;
+}
+
+
+/* ===== LEVEL IMAGE ===== */
+
+.level-image {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  border: 1px solid #1f4d6b;
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.25);
+}
+
+
+/* ===== LEVEL TEXT ===== */
+
+.level-hist,
+.level-objective {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 8px 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.level-objective strong {
+  color: #7fc5ff;
+}
