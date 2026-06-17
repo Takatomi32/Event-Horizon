@@ -1,0 +1,110 @@
+:root {
+    --accent: #3498db;
+    --text-light: #fff;
+    --text-dim: #aaa;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a,
+.active-install {
+    color: #888;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.active-install {
+    color: #fff;
+}
+
+/* INSTALL PAGE */
+.install-container {
+    max-width: 900px;
+    margin: 120px auto;
+    padding: 20px;
+    color: var(--text-light);
+}
+
+.install-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.install-subtitle {
+    color: var(--text-dim);
+    margin-bottom: 40px;
+}
+
+.install-step {
+    margin-bottom: 40px;
+}
+
+.install-step h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.install-step p,
+.install-step ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.install-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: var(--accent);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.back-btn:hover {
+    color: var(--accent);
+}
