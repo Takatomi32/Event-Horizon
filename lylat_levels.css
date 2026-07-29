@@ -110,3 +110,69 @@ h1 {
 .level-objective strong {
   color: #7fc5ff;
 }
+
+.mission-panel {
+    background: rgba(0,0,0,0.85);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+/* MAP SECTION */
+.mission-map {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #222;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.mission-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* LOWER SECTION */
+.mission-lower {
+    display: flex;
+    gap: 25px;
+}
+
+/* LEVEL PIC */
+.mission-pic {
+    width: 260px;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.mission-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFO */
+.mission-info {
+    flex: 1;
+}
+
+.mission-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.mission-desc {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.5;
+}
