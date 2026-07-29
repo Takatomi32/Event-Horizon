@@ -434,5 +434,19 @@
 
 </div>
 
+  <script>
+function toggleAudio(btn) {
+    const audio = btn.parentElement.querySelector('.level-audio');
+
+    if (audio.paused) {
+        audio.play();
+        btn.textContent = "🔊";
+    } else {
+        audio.pause();
+        btn.textContent = "🔇";
+    }
+}
+</script>
+
 </body>
 </html>
